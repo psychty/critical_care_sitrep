@@ -55,9 +55,6 @@ catchment_pop <- read_excel(paste0(github_repo_dir, "/2019 Trust Catchment Popul
   group_by(CatchmentYear, TrustCode, TrustName, AdmissionType) %>% 
   summarise(Catchment = sum(Catchment, na.rm = TRUE))
 
-
-
-
 # if(!file.exists(paste0(github_repo_dir, '/winter_sitrep_daily_ts.xlsx'))){
 # download.file('https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2020/03/Winter-SitRep-Acute-Time-series-2-December-2019-1-March-2020.xlsx', paste0(github_repo_dir, '/winter_sitrep_daily_ts.xlsx'), mode = 'wb')
 # }
@@ -94,7 +91,6 @@ Monthly_cc_sitrep_1 <- filepaths_1 %>%
 filepaths_2 <- c('https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2018/04/MSitReps-December-CC-Revised-27.04.18.csv', 'https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2018/04/MSitReps-November-CC-Revised-27.04.18.csv', 'https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2018/04/MSitReps-October-CC-Revised-27.04.18.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2018/04/MSitReps-September-CC-Revised-27.04.18.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2018/04/MSitReps-August-CC-Revised-27.04.18.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2018/04/MSitReps-July-CC-Revised-27.04.18.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2018/04/MSitReps-June-CC-Revised-27.04.18.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2018/04/MSitReps-May-CC-Revised-27.04.18.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2018/04/MSitReps-April-CC-Revised-27.04.18.csv', 'https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-March-2017-Revised-27.10.2017-s65Bu.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-February-2017-Revised-27.10.2017-8v6Hy.csv', 'https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-January-2017-Revised-27.10.2017-Un45M.csv', 'https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-December-2016-n09YJ.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-November-2016-2B447.csv',  'https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-October-2016-JkigS.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-September-2016-3gThp.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-August-2016-76Sk0.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-July-2016-Revised-SqGaU.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-June-2016-Revised-g02SK.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-May-2016-Revised-a3i7N.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-April-2016-Revised-lxIXm.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Monthly-SITREPs-CC-Extracts-fdjs.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Monthly-SITREPs-CC-Extracts-February-2016-Revised-nVt3S.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Monthly-SITREPs-CC-Extracts-jgsdd1.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Monthly-SITREPs-CC-Extracts-jgsdd.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Nov-csv-CC-fevcm.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Oct-csv-cc-fevcm.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Sept-csv-cc-fevcm.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Monthly-SITREPs-CC-Extracts-fjkiu.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Monthly-SITREPs-CC-Extracts-djery.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Monthly-SITREPs-CC-Extracts.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Monthly-SITREPS-CC-Extracts-May.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Monthly-SITREPS-CC-Extracts-April.csv')
 
 Monthly_cc_sitrep_2 = data.frame(Code = character(), adult_beds_open = numeric(), adult_beds_occupied = numeric(), `Number of paediatric intensive care beds open` = numeric(), `Number of paediatric intensive care beds occupied` = numeric(), `Number of neonatal critical care cots (or beds) open` = numeric(), `Number of neonatal critical care cots (or beds) occupied` = numeric(), Period = character(), check.names = FALSE)      
-
 for(i in 1:length(filepaths_2)){
   Period_x <- read_csv(filepaths_2[i], skip = 1, n_max = 1, col_names = c('Year', 'Period', 'SHA', 'Org')) %>% 
     mutate(Year = gsub('Year:', '', Year)) %>% 
@@ -130,6 +126,9 @@ Monthly_cc_sitrep <- Monthly_cc_sitrep_1 %>%
   mutate(Percentage_adult_cc_beds_occupied = adult_beds_occupied / adult_beds_open)
 
 rm(Monthly_cc_sitrep_1, Monthly_cc_sitrep_2, Monthly_cc_sitrep_x, Period_x)
+
+Monthly_cc_sitrep %>% 
+  write.csv(., paste0(github_repo_dir, '/Monthly_adult_cc_sitrep.csv'), row.names = FALSE)
 
 Providers <- Monthly_cc_sitrep %>% 
   select(Code, Name,  Region_code, Region_name) %>% 
@@ -209,10 +208,13 @@ Daily_ga_sitrep <- read_csv(paste0(github_repo_dir, '/general_acute_bed_occupanc
   mutate(Occupied_rate = Occupied / Open) %>% 
   select(Code, Name, Date, Open, Available, Occupied, Occupied_rate)
 
-names(Daily_ga_sitrep)
+Daily_cc_sitrep %>% 
+  write.csv(., paste0(github_repo_dir, '/Daily_adult_cc_sitrep.csv'), row.names = FALSE)
 
+Daily_ga_sitrep %>% 
+  write.csv(., paste0(github_repo_dir, '/Daily_adult_ga_sitrep.csv'), row.names = FALSE)
 
-local_trust_cc <- Daily_cc_sitrep %>% 
+ local_trust_cc <- Daily_cc_sitrep %>% 
   filter(Name == 'ENGLAND')
 
 ggplot(data = local_trust_cc, aes(x = Date, y = Occupied_rate, group = 1)) +
