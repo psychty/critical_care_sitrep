@@ -143,6 +143,7 @@
 "RXW","Shrewsbury and Telford Hospital NHS Trust","Y60","Midlands Commissioning Region",2020-01-01,"January-2020",20,16,4,0.2,0.8,455004,4.3955657532681
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2020-01-01,"January-2020",162,154,8,0.0493827160493827,0.950617283950617,607255,26.6774254637673
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2020-01-01,"January-2020",22,17,5,0.227272727272727,0.772727272727273,472494,4.65614378171998
+"-","England","-",NA,2020-01-01,"January-2020",4123,3423,700,0.169779286926995,0.830220713073005,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2019-12-01,"December-2019",108,81,27,0.25,0.75,916232,11.7874075561648
 "R0B","South Tyneside and Sunderland NHS Foundation Trust","Y63","North East and Yorkshire Commissioning Region",2019-12-01,"December-2019",24,12,12,0.5,0.5,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2019-12-01,"December-2019",6,5,1,0.166666666666667,0.833333333333333,132415,4.5312086999207
@@ -287,6 +288,7 @@
 "RXW","Shrewsbury and Telford Hospital NHS Trust","Y60","Midlands Commissioning Region",2019-12-01,"December-2019",18,16,2,0.111111111111111,0.888888888888889,455004,3.95600917794129
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2019-12-01,"December-2019",157,129,28,0.178343949044586,0.821656050955414,607255,25.8540481346387
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2019-12-01,"December-2019",22,17,5,0.227272727272727,0.772727272727273,472494,4.65614378171998
+"-","England","-",NA,2019-12-01,"December-2019",4048,3048,1000,0.24703557312253,0.75296442687747,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2019-11-01,"November-2019",108,90,18,0.166666666666667,0.833333333333333,916232,11.7874075561648
 "R0B","South Tyneside and Sunderland NHS Foundation Trust","Y63","North East and Yorkshire Commissioning Region",2019-11-01,"November-2019",24,12,12,0.5,0.5,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2019-11-01,"November-2019",6,6,0,0,1,132415,4.5312086999207
@@ -431,6 +433,7 @@
 "RXW","Shrewsbury and Telford Hospital NHS Trust","Y60","Midlands Commissioning Region",2019-11-01,"November-2019",19,17,2,0.105263157894737,0.894736842105263,455004,4.1757874656047
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2019-11-01,"November-2019",161,147,14,0.0869565217391304,0.91304347826087,607255,26.5127499979416
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2019-11-01,"November-2019",22,15,7,0.318181818181818,0.681818181818182,472494,4.65614378171998
+"-","England","-",NA,2019-11-01,"November-2019",4121,3416,705,0.171074981800534,0.828925018199466,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2019-10-01,"October-2019",108,94,14,0.12962962962963,0.87037037037037,916232,11.7874075561648
 "R0B","South Tyneside and Sunderland NHS Foundation Trust","Y63","North East and Yorkshire Commissioning Region",2019-10-01,"October-2019",24,17,7,0.291666666666667,0.708333333333333,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2019-10-01,"October-2019",6,5,1,0.166666666666667,0.833333333333333,132415,4.5312086999207
@@ -575,6 +578,7 @@
 "RXW","Shrewsbury and Telford Hospital NHS Trust","Y60","Midlands Commissioning Region",2019-10-01,"October-2019",17,14,3,0.176470588235294,0.823529411764706,455004,3.73623089027789
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2019-10-01,"October-2019",158,145,13,0.0822784810126582,0.917721518987342,607255,26.0187236004644
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2019-10-01,"October-2019",22,20,2,0.0909090909090909,0.909090909090909,472494,4.65614378171998
+"-","England","-",NA,2019-10-01,"October-2019",4125,3339,786,0.190545454545455,0.809454545454545,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2019-09-01,"September-2019",86,74,12,0.13953488372093,0.86046511627907,916232,9.38626897990902
 "R0B","South Tyneside and Sunderland NHS Foundation Trust","Y63","North East and Yorkshire Commissioning Region",2019-09-01,"September-2019",24,21,3,0.125,0.875,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2019-09-01,"September-2019",6,4,2,0.333333333333333,0.666666666666667,132415,4.5312086999207
@@ -720,6 +724,7 @@
 "RXW","Shrewsbury and Telford Hospital NHS Trust","Y60","Midlands Commissioning Region",2019-09-01,"September-2019",18,11,7,0.388888888888889,0.611111111111111,455004,3.95600917794129
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2019-09-01,"September-2019",156,138,18,0.115384615384615,0.884615384615385,607255,25.6893726688129
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2019-09-01,"September-2019",22,16,6,0.272727272727273,0.727272727272727,472494,4.65614378171998
+"-","England","-",NA,2019-09-01,"September-2019",4090,3305,785,0.191931540342298,0.808068459657702,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2019-08-01,"August-2019",86,75,11,0.127906976744186,0.872093023255814,916232,9.38626897990902
 "R0B","South Tyneside and Sunderland NHS Foundation Trust","Y63","North East and Yorkshire Commissioning Region",2019-08-01,"August-2019",24,15,9,0.375,0.625,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2019-08-01,"August-2019",6,2,4,0.666666666666667,0.333333333333333,132415,4.5312086999207
@@ -865,6 +870,7 @@
 "RXW","Shrewsbury and Telford Hospital NHS Trust","Y60","Midlands Commissioning Region",2019-08-01,"August-2019",18,14,4,0.222222222222222,0.777777777777778,455004,3.95600917794129
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2019-08-01,"August-2019",156,135,21,0.134615384615385,0.865384615384615,607255,25.6893726688129
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2019-08-01,"August-2019",22,17,5,0.227272727272727,0.772727272727273,472494,4.65614378171998
+"-","England","-",NA,2019-08-01,"August-2019",4084,3241,843,0.2064152791381,0.7935847208619,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2019-07-01,"July-2019",86,73,13,0.151162790697674,0.848837209302326,916232,9.38626897990902
 "R0B","South Tyneside and Sunderland NHS Foundation Trust","Y63","North East and Yorkshire Commissioning Region",2019-07-01,"July-2019",24,15,9,0.375,0.625,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2019-07-01,"July-2019",6,4,2,0.333333333333333,0.666666666666667,132415,4.5312086999207
@@ -1010,6 +1016,7 @@
 "RXW","Shrewsbury and Telford Hospital NHS Trust","Y60","Midlands Commissioning Region",2019-07-01,"July-2019",16,12,4,0.25,0.75,455004,3.51645260261448
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2019-07-01,"July-2019",150,127,23,0.153333333333333,0.846666666666667,607255,24.7013198738586
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2019-07-01,"July-2019",22,19,3,0.136363636363636,0.863636363636364,472494,4.65614378171998
+"-","England","-",NA,2019-07-01,"July-2019",4079,3245,834,0.204461877911253,0.795538122088747,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2019-06-01,"June-2019",105,98,7,0.0666666666666667,0.933333333333333,916232,11.4599795684936
 "R0B","South Tyneside and Sunderland NHS Foundation Trust","Y63","North East and Yorkshire Commissioning Region",2019-06-01,"June-2019",24,14,10,0.416666666666667,0.583333333333333,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2019-06-01,"June-2019",6,4,2,0.333333333333333,0.666666666666667,132415,4.5312086999207
@@ -1155,6 +1162,7 @@
 "RXW","Shrewsbury and Telford Hospital NHS Trust","Y60","Midlands Commissioning Region",2019-06-01,"June-2019",18,13,5,0.277777777777778,0.722222222222222,455004,3.95600917794129
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2019-06-01,"June-2019",155,145,10,0.0645161290322581,0.935483870967742,607255,25.5246972029872
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2019-06-01,"June-2019",22,15,7,0.318181818181818,0.681818181818182,472494,4.65614378171998
+"-","England","-",NA,2019-06-01,"June-2019",4120,3320,800,0.194174757281553,0.805825242718447,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2019-05-01,"May-2019",86,77,9,0.104651162790698,0.895348837209302,916232,9.38626897990902
 "R0B","South Tyneside and Sunderland NHS Foundation Trust","Y63","North East and Yorkshire Commissioning Region",2019-05-01,"May-2019",24,19,5,0.208333333333333,0.791666666666667,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2019-05-01,"May-2019",6,3,3,0.5,0.5,132415,4.5312086999207
@@ -1300,6 +1308,7 @@
 "RXW","Shrewsbury and Telford Hospital NHS Trust","Y60","Midlands Commissioning Region",2019-05-01,"May-2019",17,15,2,0.117647058823529,0.882352941176471,455004,3.73623089027789
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2019-05-01,"May-2019",152,132,20,0.131578947368421,0.868421052631579,607255,25.03067080551
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2019-05-01,"May-2019",22,19,3,0.136363636363636,0.863636363636364,472494,4.65614378171998
+"-","England","-",NA,2019-05-01,"May-2019",4106,3252,854,0.20798830979055,0.79201169020945,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2019-04-01,"April-2019",94,89,5,0.0531914893617021,0.946808510638298,916232,10.2594102803657
 "R0B","South Tyneside and Sunderland NHS Foundation Trust","Y63","North East and Yorkshire Commissioning Region",2019-04-01,"April-2019",23,14,9,0.391304347826087,0.608695652173913,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2019-04-01,"April-2019",6,4,2,0.333333333333333,0.666666666666667,132415,4.5312086999207
@@ -1445,6 +1454,7 @@
 "RXW","Shrewsbury and Telford Hospital NHS Trust","Y60","Midlands Commissioning Region",2019-04-01,"April-2019",16,13,3,0.1875,0.8125,455004,3.51645260261448
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2019-04-01,"April-2019",161,136,25,0.15527950310559,0.84472049689441,607255,26.5127499979416
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2019-04-01,"April-2019",22,16,6,0.272727272727273,0.727272727272727,472494,4.65614378171998
+"-","England","-",NA,2019-04-01,"April-2019",4119,3328,791,0.192036902160719,0.807963097839281,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2019-03-01,"March-2019",96,81,15,0.15625,0.84375,916232,10.4776956054798
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2019-03-01,"March-2019",6,5,1,0.166666666666667,0.833333333333333,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2019-03-01,"March-2019",122,110,12,0.0983606557377049,0.901639344262295,1194139,10.2165660781534
@@ -1592,6 +1602,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2019-03-01,"March-2019",152,134,18,0.118421052631579,0.881578947368421,607255,25.03067080551
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2019-03-01,"March-2019",22,13,9,0.409090909090909,0.590909090909091,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2019-03-01,"March-2019",0,0,0,NA,NA,NA,NA
+"-","England","-",NA,2019-03-01,"March-2019",4119,3323,796,0.193250789026463,0.806749210973537,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2019-02-01,"February-2019",108,83,25,0.231481481481481,0.768518518518518,916232,11.7874075561648
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2019-02-01,"February-2019",6,5,1,0.166666666666667,0.833333333333333,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2019-02-01,"February-2019",122,110,12,0.0983606557377049,0.901639344262295,1194139,10.2165660781534
@@ -1739,6 +1750,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2019-02-01,"February-2019",158,124,34,0.215189873417722,0.784810126582278,607255,26.0187236004644
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2019-02-01,"February-2019",22,19,3,0.136363636363636,0.863636363636364,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2019-02-01,"February-2019",0,0,0,NA,NA,NA,NA
+"-","England","-",NA,2019-02-01,"February-2019",4157,3388,769,0.184989174885735,0.815010825114265,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2019-01-01,"January-2019",100,89,11,0.11,0.89,916232,10.9142662557082
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2019-01-01,"January-2019",6,6,0,0,1,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2019-01-01,"January-2019",120,113,7,0.0583333333333333,0.941666666666667,1194139,10.0490813883476
@@ -1886,6 +1898,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2019-01-01,"January-2019",146,128,18,0.123287671232877,0.876712328767123,607255,24.0426180105557
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2019-01-01,"January-2019",22,16,6,0.272727272727273,0.727272727272727,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2019-01-01,"January-2019",0,0,0,NA,NA,NA,NA
+"-","England","-",NA,2019-01-01,"January-2019",4140,3532,608,0.146859903381643,0.853140096618357,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2018-12-01,"December-2018",107,74,33,0.308411214953271,0.691588785046729,916232,11.6782648936077
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2018-12-01,"December-2018",6,4,2,0.333333333333333,0.666666666666667,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2018-12-01,"December-2018",120,85,35,0.291666666666667,0.708333333333333,1194139,10.0490813883476
@@ -2033,6 +2046,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2018-12-01,"December-2018",137,111,26,0.18978102189781,0.81021897810219,607255,22.5605388181242
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2018-12-01,"December-2018",22,17,5,0.227272727272727,0.772727272727273,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2018-12-01,"December-2018",0,0,0,NA,NA,NA,NA
+"-","England","-",NA,2018-12-01,"December-2018",4082,3079,1003,0.245712885840274,0.754287114159726,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2018-11-01,"November-2018",108,97,11,0.101851851851852,0.898148148148148,916232,11.7874075561648
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2018-11-01,"November-2018",6,5,1,0.166666666666667,0.833333333333333,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2018-11-01,"November-2018",120,112,8,0.0666666666666667,0.933333333333333,1194139,10.0490813883476
@@ -2180,6 +2194,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2018-11-01,"November-2018",144,125,19,0.131944444444444,0.868055555555556,607255,23.7132670789042
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2018-11-01,"November-2018",22,19,3,0.136363636363636,0.863636363636364,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2018-11-01,"November-2018",0,0,0,NA,NA,NA,NA
+"-","England","-",NA,2018-11-01,"November-2018",4110,3400,710,0.172749391727494,0.827250608272506,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2018-10-01,"October-2018",100,92,8,0.08,0.92,916232,10.9142662557082
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2018-10-01,"October-2018",6,4,2,0.333333333333333,0.666666666666667,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2018-10-01,"October-2018",120,108,12,0.1,0.9,1194139,10.0490813883476
@@ -2327,6 +2342,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2018-10-01,"October-2018",143,121,22,0.153846153846154,0.846153846153846,607255,23.5485916130785
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2018-10-01,"October-2018",21,15,6,0.285714285714286,0.714285714285714,472494,4.44450088255089
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2018-10-01,"October-2018",0,0,0,NA,NA,NA,NA
+"-","England","-",NA,2018-10-01,"October-2018",4075,3293,782,0.191901840490798,0.808098159509202,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2018-09-01,"September-2018",101,98,3,0.0297029702970297,0.97029702970297,916232,11.0234089182652
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2018-09-01,"September-2018",6,4,2,0.333333333333333,0.666666666666667,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2018-09-01,"September-2018",120,114,6,0.05,0.95,1194139,10.0490813883476
@@ -2474,6 +2490,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2018-09-01,"September-2018",145,123,22,0.151724137931034,0.848275862068966,607255,23.87794254473
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2018-09-01,"September-2018",22,18,4,0.181818181818182,0.818181818181818,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2018-09-01,"September-2018",0,0,0,NA,NA,NA,NA
+"-","England","-",NA,2018-09-01,"September-2018",4085,3268,817,0.2,0.8,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2018-08-01,"August-2018",101,79,22,0.217821782178218,0.782178217821782,916232,11.0234089182652
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2018-08-01,"August-2018",6,5,1,0.166666666666667,0.833333333333333,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2018-08-01,"August-2018",120,104,16,0.133333333333333,0.866666666666667,1194139,10.0490813883476
@@ -2621,6 +2638,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2018-08-01,"August-2018",145,128,17,0.117241379310345,0.882758620689655,607255,23.87794254473
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2018-08-01,"August-2018",22,17,5,0.227272727272727,0.772727272727273,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2018-08-01,"August-2018",0,0,0,NA,NA,NA,NA
+"-","England","-",NA,2018-08-01,"August-2018",4063,3187,876,0.215604233325129,0.784395766674871,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2018-07-01,"July-2018",99,92,7,0.0707070707070707,0.929292929292929,916232,10.8051235931511
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2018-07-01,"July-2018",6,4,2,0.333333333333333,0.666666666666667,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2018-07-01,"July-2018",120,101,19,0.158333333333333,0.841666666666667,1194139,10.0490813883476
@@ -2768,6 +2786,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2018-07-01,"July-2018",145,115,30,0.206896551724138,0.793103448275862,607255,23.87794254473
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2018-07-01,"July-2018",22,18,4,0.181818181818182,0.818181818181818,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2018-07-01,"July-2018",0,0,0,NA,NA,NA,NA
+"-","England","-",NA,2018-07-01,"July-2018",4077,3192,885,0.217071376011773,0.782928623988227,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2018-06-01,"June-2018",100,94,6,0.06,0.94,916232,10.9142662557082
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2018-06-01,"June-2018",6,5,1,0.166666666666667,0.833333333333333,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2018-06-01,"June-2018",120,106,14,0.116666666666667,0.883333333333333,1194139,10.0490813883476
@@ -2917,6 +2936,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2018-06-01,"June-2018",142,124,18,0.126760563380282,0.873239436619718,607255,23.3839161472528
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2018-06-01,"June-2018",22,16,6,0.272727272727273,0.727272727272727,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2018-06-01,"June-2018",0,0,0,NA,NA,NA,NA
+"-","England","-",NA,2018-06-01,"June-2018",4082,3251,831,0.203576678098971,0.796423321901029,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2018-05-01,"May-2018",95,87,8,0.0842105263157895,0.91578947368421,916232,10.3685529429228
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2018-05-01,"May-2018",6,3,3,0.5,0.5,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2018-05-01,"May-2018",121,104,17,0.140495867768595,0.859504132231405,1194139,10.1328237332505
@@ -3067,6 +3087,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2018-05-01,"May-2018",114,92,22,0.192982456140351,0.807017543859649,607255,18.7730031041325
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2018-05-01,"May-2018",22,15,7,0.318181818181818,0.681818181818182,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2018-05-01,"May-2018",0,0,0,NA,NA,NA,NA
+"-","England","-",NA,2018-05-01,"May-2018",4050,3235,815,0.201234567901235,0.798765432098765,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2018-04-01,"April-2018",99,81,18,0.181818181818182,0.818181818181818,916232,10.8051235931511
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2018-04-01,"April-2018",6,4,2,0.333333333333333,0.666666666666667,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2018-04-01,"April-2018",121,111,10,0.0826446280991736,0.917355371900826,1194139,10.1328237332505
@@ -3217,6 +3238,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2018-04-01,"April-2018",112,98,14,0.125,0.875,607255,18.4436521724811
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2018-04-01,"April-2018",22,16,6,0.272727272727273,0.727272727272727,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2018-04-01,"April-2018",0,0,0,NA,NA,NA,NA
+"-","England","-",NA,2018-04-01,"April-2018",4057,3322,735,0.181168350998275,0.818831649001725,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2018-03-01,"March-2018",98,89,9,0.0918367346938776,0.908163265306122,916232,10.695980930594
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2018-03-01,"March-2018",6,6,0,0,1,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2018-03-01,"March-2018",118,109,9,0.076271186440678,0.923728813559322,1194139,9.8815966985418
@@ -3367,6 +3389,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2018-03-01,"March-2018",110,96,14,0.127272727272727,0.872727272727273,607255,18.1143012408296
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2018-03-01,"March-2018",22,17,5,0.227272727272727,0.772727272727273,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2018-03-01,"March-2018",0,0,0,NA,NA,NA,NA
+"-","England","-",NA,2018-03-01,"March-2018",4064,3355,709,0.174458661417323,0.825541338582677,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2018-02-01,"February-2018",105,104,1,0.00952380952380952,0.990476190476191,916232,11.4599795684936
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2018-02-01,"February-2018",7,7,0,0,1,132415,5.28641014990749
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2018-02-01,"February-2018",120,114,6,0.05,0.95,1194139,10.0490813883476
@@ -3517,6 +3540,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2018-02-01,"February-2018",114,106,8,0.0701754385964912,0.929824561403509,607255,18.7730031041325
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2018-02-01,"February-2018",22,17,5,0.227272727272727,0.772727272727273,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2018-02-01,"February-2018",0,0,0,NA,NA,NA,NA
+"-","England","-",NA,2018-02-01,"February-2018",4074,3478,596,0.146293568973981,0.853706431026019,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2018-01-01,"January-2018",102,95,7,0.0686274509803922,0.931372549019608,916232,11.1325515808223
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2018-01-01,"January-2018",6,1,5,0.833333333333333,0.166666666666667,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2018-01-01,"January-2018",120,106,14,0.116666666666667,0.883333333333333,1194139,10.0490813883476
@@ -3667,6 +3691,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2018-01-01,"January-2018",112,95,17,0.151785714285714,0.848214285714286,607255,18.4436521724811
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2018-01-01,"January-2018",22,20,2,0.0909090909090909,0.909090909090909,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2018-01-01,"January-2018",0,0,0,NA,NA,NA,NA
+"-","England","-",NA,2018-01-01,"January-2018",4085,3537,548,0.134149326805386,0.865850673194614,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2017-12-01,"December-2017",96,87,9,0.09375,0.90625,916232,10.4776956054798
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2017-12-01,"December-2017",6,6,0,0,1,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2017-12-01,"December-2017",120,109,11,0.0916666666666667,0.908333333333333,1194139,10.0490813883476
@@ -3817,7 +3842,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2017-12-01,"December-2017",112,80,32,0.285714285714286,0.714285714285714,607255,18.4436521724811
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2017-12-01,"December-2017",22,18,4,0.181818181818182,0.818181818181818,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2017-12-01,"December-2017",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2017-12-01,"December-2017",4060,3336,724,0.178325123152709,0.821674876847291,NA,NA
+"-","England","-",NA,2017-12-01,"December-2017",4060,3336,724,0.178325123152709,0.821674876847291,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2017-11-01,"November-2017",104,102,2,0.0192307692307692,0.980769230769231,916232,11.3508369059365
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2017-11-01,"November-2017",6,3,3,0.5,0.5,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2017-11-01,"November-2017",121,110,11,0.0909090909090909,0.909090909090909,1194139,10.1328237332505
@@ -3968,7 +3993,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2017-11-01,"November-2017",112,94,18,0.160714285714286,0.839285714285714,607255,18.4436521724811
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2017-11-01,"November-2017",22,19,3,0.136363636363636,0.863636363636364,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2017-11-01,"November-2017",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2017-11-01,"November-2017",4070,3445,625,0.153562653562654,0.846437346437346,NA,NA
+"-","England","-",NA,2017-11-01,"November-2017",4070,3445,625,0.153562653562654,0.846437346437346,NA,NA
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2017-10-01,"October-2017",104,96,8,0.0769230769230769,0.923076923076923,916232,11.3508369059365
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2017-10-01,"October-2017",6,3,3,0.5,0.5,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2017-10-01,"October-2017",120,115,5,0.0416666666666667,0.958333333333333,1194139,10.0490813883476
@@ -4119,7 +4144,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2017-10-01,"October-2017",108,95,13,0.12037037037037,0.87962962962963,607255,17.7849503091782
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2017-10-01,"October-2017",22,17,5,0.227272727272727,0.772727272727273,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2017-10-01,"October-2017",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2017-10-01,"October-2017",4071,3296,775,0.190370916236797,0.809629083763203,NA,NA
+"-","England","-",NA,2017-10-01,"October-2017",4071,3296,775,0.190370916236797,0.809629083763203,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2017-09-01,"September-2017",6,5,1,0.166666666666667,0.833333333333333,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2017-09-01,"September-2017",121,112,9,0.0743801652892562,0.925619834710744,1194139,10.1328237332505
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2017-09-01,"September-2017",34,30,4,0.117647058823529,0.882352941176471,677603,5.01768734790135
@@ -4269,7 +4294,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2017-09-01,"September-2017",107,89,18,0.168224299065421,0.831775700934579,607255,17.6202748433525
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2017-09-01,"September-2017",22,18,4,0.181818181818182,0.818181818181818,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2017-09-01,"September-2017",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2017-09-01,"September-2017",4056,3327,729,0.179733727810651,0.820266272189349,NA,NA
+"-","England","-",NA,2017-09-01,"September-2017",4056,3327,729,0.179733727810651,0.820266272189349,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2017-08-01,"August-2017",6,1,5,0.833333333333333,0.166666666666667,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2017-08-01,"August-2017",116,104,12,0.103448275862069,0.896551724137931,1194139,9.714112008736
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2017-08-01,"August-2017",33,29,4,0.121212121212121,0.878787878787879,677603,4.87010830825719
@@ -4419,7 +4444,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2017-08-01,"August-2017",112,91,21,0.1875,0.8125,607255,18.4436521724811
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2017-08-01,"August-2017",22,17,5,0.227272727272727,0.772727272727273,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2017-08-01,"August-2017",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2017-08-01,"August-2017",4041,3228,813,0.201187824795843,0.798812175204157,NA,NA
+"-","England","-",NA,2017-08-01,"August-2017",4041,3228,813,0.201187824795843,0.798812175204157,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2017-07-01,"July-2017",6,5,1,0.166666666666667,0.833333333333333,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2017-07-01,"July-2017",116,98,18,0.155172413793103,0.844827586206897,1194139,9.714112008736
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2017-07-01,"July-2017",33,22,11,0.333333333333333,0.666666666666667,677603,4.87010830825719
@@ -4569,7 +4594,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2017-07-01,"July-2017",104,81,23,0.221153846153846,0.778846153846154,607255,17.1262484458753
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2017-07-01,"July-2017",22,14,8,0.363636363636364,0.636363636363636,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2017-07-01,"July-2017",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2017-07-01,"July-2017",4060,3161,899,0.221428571428571,0.778571428571429,NA,NA
+"-","England","-",NA,2017-07-01,"July-2017",4060,3161,899,0.221428571428571,0.778571428571429,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2017-06-01,"June-2017",6,5,1,0.166666666666667,0.833333333333333,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2017-06-01,"June-2017",117,108,9,0.0769230769230769,0.923076923076923,1194139,9.7978543536389
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2017-06-01,"June-2017",33,23,10,0.303030303030303,0.696969696969697,677603,4.87010830825719
@@ -4719,7 +4744,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2017-06-01,"June-2017",111,87,24,0.216216216216216,0.783783783783784,607255,18.2789767066554
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2017-06-01,"June-2017",22,17,5,0.227272727272727,0.772727272727273,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2017-06-01,"June-2017",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2017-06-01,"June-2017",4079,3281,798,0.195636185339544,0.804363814660456,NA,NA
+"-","England","-",NA,2017-06-01,"June-2017",4079,3281,798,0.195636185339544,0.804363814660456,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2017-05-01,"May-2017",6,4,2,0.333333333333333,0.666666666666667,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2017-05-01,"May-2017",114,103,11,0.0964912280701754,0.903508771929825,1194139,9.54662731893021
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2017-05-01,"May-2017",33,25,8,0.242424242424242,0.757575757575758,677603,4.87010830825719
@@ -4869,7 +4894,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2017-05-01,"May-2017",108,85,23,0.212962962962963,0.787037037037037,607255,17.7849503091782
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2017-05-01,"May-2017",22,17,5,0.227272727272727,0.772727272727273,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2017-05-01,"May-2017",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2017-05-01,"May-2017",4063,3279,784,0.19296086635491,0.80703913364509,NA,NA
+"-","England","-",NA,2017-05-01,"May-2017",4063,3279,784,0.19296086635491,0.80703913364509,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2017-04-01,"April-2017",6,3,3,0.5,0.5,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2017-04-01,"April-2017",114,105,9,0.0789473684210526,0.921052631578947,1194139,9.54662731893021
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2017-04-01,"April-2017",33,20,13,0.393939393939394,0.606060606060606,677603,4.87010830825719
@@ -5019,7 +5044,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2017-04-01,"April-2017",111,84,27,0.243243243243243,0.756756756756757,607255,18.2789767066554
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2017-04-01,"April-2017",22,17,5,0.227272727272727,0.772727272727273,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2017-04-01,"April-2017",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2017-04-01,"April-2017",4064,3351,713,0.175442913385827,0.824557086614173,NA,NA
+"-","England","-",NA,2017-04-01,"April-2017",4064,3351,713,0.175442913385827,0.824557086614173,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2017-03-01,"March-2017",6,5,1,0.166666666666667,0.833333333333333,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2017-03-01,"March-2017",114,105,9,0.0789473684210526,0.921052631578947,1194139,9.54662731893021
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2017-03-01,"March-2017",33,24,9,0.272727272727273,0.727272727272727,677603,4.87010830825719
@@ -5169,7 +5194,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2017-03-01,"March-2017",112,88,24,0.214285714285714,0.785714285714286,607255,18.4436521724811
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2017-03-01,"March-2017",22,17,5,0.227272727272727,0.772727272727273,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2017-03-01,"March-2017",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2017-03-01,"March-2017",4066,3312,754,0.185440236104279,0.814559763895721,NA,NA
+"-","England","-",NA,2017-03-01,"March-2017",4066,3312,754,0.185440236104279,0.814559763895721,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2017-02-01,"February-2017",6,4,2,0.333333333333333,0.666666666666667,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2017-02-01,"February-2017",114,106,8,0.0701754385964912,0.929824561403509,1194139,9.54662731893021
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2017-02-01,"February-2017",33,25,8,0.242424242424242,0.757575757575758,677603,4.87010830825719
@@ -5319,7 +5344,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2017-02-01,"February-2017",111,93,18,0.162162162162162,0.837837837837838,607255,18.2789767066554
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2017-02-01,"February-2017",22,19,3,0.136363636363636,0.863636363636364,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2017-02-01,"February-2017",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2017-02-01,"February-2017",4084,3445,639,0.156464250734574,0.843535749265426,NA,NA
+"-","England","-",NA,2017-02-01,"February-2017",4084,3445,639,0.156464250734574,0.843535749265426,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2017-01-01,"January-2017",6,3,3,0.5,0.5,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2017-01-01,"January-2017",106,100,6,0.0566037735849057,0.943396226415094,1194139,8.87668855970704
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2017-01-01,"January-2017",33,27,6,0.181818181818182,0.818181818181818,677603,4.87010830825719
@@ -5469,7 +5494,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2017-01-01,"January-2017",112,98,14,0.125,0.875,607255,18.4436521724811
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2017-01-01,"January-2017",22,18,4,0.181818181818182,0.818181818181818,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2017-01-01,"January-2017",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2017-01-01,"January-2017",4073,3446,627,0.15394058433587,0.84605941566413,NA,NA
+"-","England","-",NA,2017-01-01,"January-2017",4073,3446,627,0.15394058433587,0.84605941566413,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2016-12-01,"December-2016",6,6,0,0,1,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2016-12-01,"December-2016",102,72,30,0.294117647058824,0.705882352941177,1194139,8.54171918009545
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2016-12-01,"December-2016",33,25,8,0.242424242424242,0.757575757575758,677603,4.87010830825719
@@ -5618,7 +5643,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2016-12-01,"December-2016",107,82,25,0.233644859813084,0.766355140186916,607255,17.6202748433525
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2016-12-01,"December-2016",22,16,6,0.272727272727273,0.727272727272727,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2016-12-01,"December-2016",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2016-12-01,"December-2016",4027,3300,727,0.180531412962503,0.819468587037497,NA,NA
+"-","England","-",NA,2016-12-01,"December-2016",4027,3300,727,0.180531412962503,0.819468587037497,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2016-11-01,"November-2016",6,3,3,0.5,0.5,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2016-11-01,"November-2016",102,95,7,0.0686274509803922,0.931372549019608,1194139,8.54171918009545
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2016-11-01,"November-2016",33,23,10,0.303030303030303,0.696969696969697,677603,4.87010830825719
@@ -5768,7 +5793,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2016-11-01,"November-2016",103,91,12,0.116504854368932,0.883495145631068,607255,16.9615729800496
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2016-11-01,"November-2016",22,21,1,0.0454545454545455,0.954545454545455,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2016-11-01,"November-2016",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2016-11-01,"November-2016",4055,3409,646,0.159309494451295,0.840690505548705,NA,NA
+"-","England","-",NA,2016-11-01,"November-2016",4055,3409,646,0.159309494451295,0.840690505548705,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2016-10-01,"October-2016",6,6,0,0,1,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2016-10-01,"October-2016",103,98,5,0.0485436893203883,0.951456310679612,1194139,8.62546152499835
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2016-10-01,"October-2016",33,23,10,0.303030303030303,0.696969696969697,677603,4.87010830825719
@@ -5918,7 +5943,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2016-10-01,"October-2016",115,109,6,0.0521739130434783,0.947826086956522,607255,18.9376785699583
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2016-10-01,"October-2016",22,18,4,0.181818181818182,0.818181818181818,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2016-10-01,"October-2016",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2016-10-01,"October-2016",4059,3321,738,0.181818181818182,0.818181818181818,NA,NA
+"-","England","-",NA,2016-10-01,"October-2016",4059,3321,738,0.181818181818182,0.818181818181818,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2016-09-01,"September-2016",6,5,1,0.166666666666667,0.833333333333333,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2016-09-01,"September-2016",102,79,23,0.225490196078431,0.774509803921569,1194139,8.54171918009545
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2016-09-01,"September-2016",33,19,14,0.424242424242424,0.575757575757576,677603,4.87010830825719
@@ -6068,7 +6093,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2016-09-01,"September-2016",112,106,6,0.0535714285714286,0.946428571428571,607255,18.4436521724811
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2016-09-01,"September-2016",22,17,5,0.227272727272727,0.772727272727273,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2016-09-01,"September-2016",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2016-09-01,"September-2016",4035,3323,712,0.176456009913259,0.823543990086741,NA,NA
+"-","England","-",NA,2016-09-01,"September-2016",4035,3323,712,0.176456009913259,0.823543990086741,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2016-08-01,"August-2016",6,4,2,0.333333333333333,0.666666666666667,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2016-08-01,"August-2016",103,88,15,0.145631067961165,0.854368932038835,1194139,8.62546152499835
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2016-08-01,"August-2016",33,22,11,0.333333333333333,0.666666666666667,677603,4.87010830825719
@@ -6218,7 +6243,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2016-08-01,"August-2016",108,101,7,0.0648148148148148,0.935185185185185,607255,17.7849503091782
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2016-08-01,"August-2016",22,18,4,0.181818181818182,0.818181818181818,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2016-08-01,"August-2016",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2016-08-01,"August-2016",4015,3255,760,0.189290161892902,0.810709838107098,NA,NA
+"-","England","-",NA,2016-08-01,"August-2016",4015,3255,760,0.189290161892902,0.810709838107098,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2016-07-01,"July-2016",6,4,2,0.333333333333333,0.666666666666667,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2016-07-01,"July-2016",103,97,6,0.058252427184466,0.941747572815534,1194139,8.62546152499835
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2016-07-01,"July-2016",33,20,13,0.393939393939394,0.606060606060606,677603,4.87010830825719
@@ -6368,7 +6393,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2016-07-01,"July-2016",108,99,9,0.0833333333333333,0.916666666666667,607255,17.7849503091782
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2016-07-01,"July-2016",22,18,4,0.181818181818182,0.818181818181818,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2016-07-01,"July-2016",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2016-07-01,"July-2016",4027,3324,703,0.174571641420412,0.825428358579588,NA,NA
+"-","England","-",NA,2016-07-01,"July-2016",4027,3324,703,0.174571641420412,0.825428358579588,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2016-06-01,"June-2016",6,4,2,0.333333333333333,0.666666666666667,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2016-06-01,"June-2016",103,90,13,0.12621359223301,0.87378640776699,1194139,8.62546152499835
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2016-06-01,"June-2016",33,22,11,0.333333333333333,0.666666666666667,677603,4.87010830825719
@@ -6518,7 +6543,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2016-06-01,"June-2016",101,90,11,0.108910891089109,0.891089108910891,607255,16.6322220483981
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2016-06-01,"June-2016",22,16,6,0.272727272727273,0.727272727272727,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2016-06-01,"June-2016",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2016-06-01,"June-2016",3990,3338,652,0.163408521303258,0.836591478696742,NA,NA
+"-","England","-",NA,2016-06-01,"June-2016",3990,3338,652,0.163408521303258,0.836591478696742,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2016-05-01,"May-2016",6,4,2,0.333333333333333,0.666666666666667,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2016-05-01,"May-2016",103,87,16,0.155339805825243,0.844660194174757,1194139,8.62546152499835
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2016-05-01,"May-2016",33,20,13,0.393939393939394,0.606060606060606,677603,4.87010830825719
@@ -6668,7 +6693,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2016-05-01,"May-2016",108,98,10,0.0925925925925926,0.907407407407407,607255,17.7849503091782
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2016-05-01,"May-2016",22,17,5,0.227272727272727,0.772727272727273,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2016-05-01,"May-2016",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2016-05-01,"May-2016",4008,3341,667,0.166417165668663,0.833582834331337,NA,NA
+"-","England","-",NA,2016-05-01,"May-2016",4008,3341,667,0.166417165668663,0.833582834331337,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2016-04-01,"April-2016",6,5,1,0.166666666666667,0.833333333333333,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2016-04-01,"April-2016",103,84,19,0.184466019417476,0.815533980582524,1194139,8.62546152499835
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2016-04-01,"April-2016",33,22,11,0.333333333333333,0.666666666666667,677603,4.87010830825719
@@ -6818,7 +6843,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2016-04-01,"April-2016",106,92,14,0.132075471698113,0.867924528301887,607255,17.4555993775267
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2016-04-01,"April-2016",21,17,4,0.19047619047619,0.80952380952381,472494,4.44450088255089
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2016-04-01,"April-2016",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2016-04-01,"April-2016",3976,3189,787,0.197937625754527,0.802062374245473,NA,NA
+"-","England","-",NA,2016-04-01,"April-2016",3976,3189,787,0.197937625754527,0.802062374245473,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2016-03-01,"March-2016",6,6,0,0,1,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2016-03-01,"March-2016",103,95,8,0.0776699029126214,0.922330097087379,1194139,8.62546152499835
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2016-03-01,"March-2016",33,22,11,0.333333333333333,0.666666666666667,677603,4.87010830825719
@@ -6968,7 +6993,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2016-03-01,"March-2016",109,103,6,0.055045871559633,0.944954128440367,607255,17.9496257750039
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2016-03-01,"March-2016",22,19,3,0.136363636363636,0.863636363636364,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2016-03-01,"March-2016",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2016-03-01,"March-2016",4015,3428,587,0.146201743462017,0.853798256537983,NA,NA
+"-","England","-",NA,2016-03-01,"March-2016",4015,3428,587,0.146201743462017,0.853798256537983,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2016-02-01,"February-2016",6,6,0,0,1,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2016-02-01,"February-2016",103,89,14,0.135922330097087,0.864077669902913,1194139,8.62546152499835
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2016-02-01,"February-2016",33,26,7,0.212121212121212,0.787878787878788,677603,4.87010830825719
@@ -7118,7 +7143,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2016-02-01,"February-2016",103,87,16,0.155339805825243,0.844660194174757,607255,16.9615729800496
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2016-02-01,"February-2016",21,18,3,0.142857142857143,0.857142857142857,472494,4.44450088255089
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2016-02-01,"February-2016",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2016-02-01,"February-2016",4016,3516,500,0.124501992031873,0.875498007968127,NA,NA
+"-","England","-",NA,2016-02-01,"February-2016",4016,3516,500,0.124501992031873,0.875498007968127,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2016-01-01,"January-2016",6,5,1,0.166666666666667,0.833333333333333,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2016-01-01,"January-2016",103,86,17,0.16504854368932,0.83495145631068,1194139,8.62546152499835
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2016-01-01,"January-2016",35,25,10,0.285714285714286,0.714285714285714,677603,5.16526638754551
@@ -7268,7 +7293,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2016-01-01,"January-2016",102,92,10,0.0980392156862745,0.901960784313726,607255,16.7968975142238
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2016-01-01,"January-2016",22,17,5,0.227272727272727,0.772727272727273,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2016-01-01,"January-2016",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2016-01-01,"January-2016",4021,3466,555,0.138025366824173,0.861974633175827,NA,NA
+"-","England","-",NA,2016-01-01,"January-2016",4021,3466,555,0.138025366824173,0.861974633175827,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2015-12-01,"December-2015",6,6,0,0,1,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2015-12-01,"December-2015",97,91,6,0.0618556701030928,0.938144329896907,1194139,8.12300745558097
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2015-12-01,"December-2015",35,26,9,0.257142857142857,0.742857142857143,677603,5.16526638754551
@@ -7418,7 +7443,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2015-12-01,"December-2015",104,81,23,0.221153846153846,0.778846153846154,607255,17.1262484458753
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2015-12-01,"December-2015",21,18,3,0.142857142857143,0.857142857142857,472494,4.44450088255089
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2015-12-01,"December-2015",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2015-12-01,"December-2015",3967,3182,785,0.197882530879758,0.802117469120242,NA,NA
+"-","England","-",NA,2015-12-01,"December-2015",3967,3182,785,0.197882530879758,0.802117469120242,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2015-11-01,"November-2015",6,6,0,0,1,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2015-11-01,"November-2015",97,93,4,0.0412371134020619,0.958762886597938,1194139,8.12300745558097
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2015-11-01,"November-2015",35,26,9,0.257142857142857,0.742857142857143,677603,5.16526638754551
@@ -7568,7 +7593,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2015-11-01,"November-2015",104,90,14,0.134615384615385,0.865384615384615,607255,17.1262484458753
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2015-11-01,"November-2015",22,17,5,0.227272727272727,0.772727272727273,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2015-11-01,"November-2015",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2015-11-01,"November-2015",3996,3350,646,0.161661661661662,0.838338338338338,NA,NA
+"-","England","-",NA,2015-11-01,"November-2015",3996,3350,646,0.161661661661662,0.838338338338338,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2015-10-01,"October-2015",6,5,1,0.166666666666667,0.833333333333333,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2015-10-01,"October-2015",97,92,5,0.0515463917525773,0.948453608247423,1194139,8.12300745558097
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2015-10-01,"October-2015",35,27,8,0.228571428571429,0.771428571428571,677603,5.16526638754551
@@ -7718,7 +7743,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2015-10-01,"October-2015",99,89,10,0.101010101010101,0.898989898989899,607255,16.3028711167467
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2015-10-01,"October-2015",22,17,5,0.227272727272727,0.772727272727273,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2015-10-01,"October-2015",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2015-10-01,"October-2015",3970,3326,644,0.162216624685139,0.837783375314861,NA,NA
+"-","England","-",NA,2015-10-01,"October-2015",3970,3326,644,0.162216624685139,0.837783375314861,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2015-09-01,"September-2015",6,6,0,0,1,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2015-09-01,"September-2015",96,93,3,0.03125,0.96875,1194139,8.03926511067807
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2015-09-01,"September-2015",38,27,11,0.289473684210526,0.710526315789474,677603,5.60800350647798
@@ -7868,7 +7893,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2015-09-01,"September-2015",105,93,12,0.114285714285714,0.885714285714286,607255,17.290923911701
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2015-09-01,"September-2015",21,18,3,0.142857142857143,0.857142857142857,472494,4.44450088255089
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2015-09-01,"September-2015",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2015-09-01,"September-2015",3962,3284,678,0.171125694093892,0.828874305906108,NA,NA
+"-","England","-",NA,2015-09-01,"September-2015",3962,3284,678,0.171125694093892,0.828874305906108,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2015-08-01,"August-2015",6,4,2,0.333333333333333,0.666666666666667,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2015-08-01,"August-2015",96,88,8,0.0833333333333333,0.916666666666667,1194139,8.03926511067807
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2015-08-01,"August-2015",41,31,10,0.24390243902439,0.75609756097561,677603,6.05074062541045
@@ -8018,7 +8043,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2015-08-01,"August-2015",98,86,12,0.122448979591837,0.877551020408163,607255,16.1381956509209
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2015-08-01,"August-2015",21,17,4,0.19047619047619,0.80952380952381,472494,4.44450088255089
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2015-08-01,"August-2015",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2015-08-01,"August-2015",3969,3166,803,0.202317964222726,0.797682035777274,NA,NA
+"-","England","-",NA,2015-08-01,"August-2015",3969,3166,803,0.202317964222726,0.797682035777274,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2015-07-01,"July-2015",6,5,1,0.166666666666667,0.833333333333333,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2015-07-01,"July-2015",96,89,7,0.0729166666666667,0.927083333333333,1194139,8.03926511067807
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2015-07-01,"July-2015",35,28,7,0.2,0.8,677603,5.16526638754551
@@ -8168,7 +8193,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2015-07-01,"July-2015",100,92,8,0.08,0.92,607255,16.4675465825724
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2015-07-01,"July-2015",21,17,4,0.19047619047619,0.80952380952381,472494,4.44450088255089
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2015-07-01,"July-2015",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2015-07-01,"July-2015",3981,3313,668,0.167797035920623,0.832202964079377,NA,NA
+"-","England","-",NA,2015-07-01,"July-2015",3981,3313,668,0.167797035920623,0.832202964079377,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2015-06-01,"June-2015",6,5,1,0.166666666666667,0.833333333333333,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2015-06-01,"June-2015",96,90,6,0.0625,0.9375,1194139,8.03926511067807
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2015-06-01,"June-2015",41,32,9,0.219512195121951,0.780487804878049,677603,6.05074062541045
@@ -8318,7 +8343,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2015-06-01,"June-2015",104,94,10,0.0961538461538462,0.903846153846154,607255,17.1262484458753
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2015-06-01,"June-2015",21,15,6,0.285714285714286,0.714285714285714,472494,4.44450088255089
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2015-06-01,"June-2015",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2015-06-01,"June-2015",3978,3290,688,0.172951231774761,0.827048768225239,NA,NA
+"-","England","-",NA,2015-06-01,"June-2015",3978,3290,688,0.172951231774761,0.827048768225239,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2015-05-01,"May-2015",6,6,0,0,1,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2015-05-01,"May-2015",96,89,7,0.0729166666666667,0.927083333333333,1194139,8.03926511067807
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2015-05-01,"May-2015",32,27,5,0.15625,0.84375,677603,4.72252926861304
@@ -8468,7 +8493,7 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2015-05-01,"May-2015",100,82,18,0.18,0.82,607255,16.4675465825724
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2015-05-01,"May-2015",21,17,4,0.19047619047619,0.80952380952381,472494,4.44450088255089
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2015-05-01,"May-2015",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2015-05-01,"May-2015",3962,3269,693,0.174911660777385,0.825088339222615,NA,NA
+"-","England","-",NA,2015-05-01,"May-2015",3962,3269,693,0.174911660777385,0.825088339222615,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2015-04-01,"April-2015",6,4,2,0.333333333333333,0.666666666666667,132415,4.5312086999207
 "R1H","Barts Health NHS Trust","Y56","London Commissioning Region",2015-04-01,"April-2015",96,89,7,0.0729166666666667,0.927083333333333,1194139,8.03926511067807
 "R1K","London North West University Healthcare NHS Trust","Y56","London Commissioning Region",2015-04-01,"April-2015",41,30,11,0.268292682926829,0.731707317073171,677603,6.05074062541045
@@ -8618,4 +8643,4 @@
 "RYJ","Imperial College Healthcare NHS Trust","Y56","London Commissioning Region",2015-04-01,"April-2015",108,95,13,0.12037037037037,0.87962962962963,607255,17.7849503091782
 "RYR","Western Sussex Hospitals NHS Foundation Trust","Y59","South East Commissioning Region",2015-04-01,"April-2015",22,18,4,0.181818181818182,0.818181818181818,472494,4.65614378171998
 "RYV","Cambridgeshire Community Services NHS Trust","Y61","East of England Commissioning Region",2015-04-01,"April-2015",0,0,0,NA,NA,NA,NA
-"-","England",NA,NA,2015-04-01,"April-2015",4023,3389,634,0.157593835446184,0.842406164553816,NA,NA
+"-","England","-",NA,2015-04-01,"April-2015",4023,3389,634,0.157593835446184,0.842406164553816,NA,NA

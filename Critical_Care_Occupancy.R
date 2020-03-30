@@ -80,7 +80,7 @@ Monthly_cc_sitrep_1 <- filepaths_1 %>%
   map_df(~read_csv(.)) %>% 
   mutate(Period = paste0('01-', capwords(gsub('MSitRep-', '' , Period), strict = TRUE))) %>% 
   mutate(Date = as.Date(Period, format = '%d-%B-%Y')) %>% 
-  filter(`Org Code` != 'Totals') %>% 
+  mutate(`Org Code` = ifelse(`Org Code` == 'Totals', '-', `Org Code`)) %>% 
   left_join(etr, by = c('Org Code' = 'Code')) %>% 
   select(-c(`Org name`, `Region Code`, `Region name`)) %>% 
   rename(Region_code = National_grouping) %>% 
@@ -111,6 +111,7 @@ for(i in 1:length(filepaths_2)){
 }
 
 Monthly_cc_sitrep_2 <- Monthly_cc_sitrep_2 %>% 
+  mutate(Code = ifelse(Code == 'ENGLAND', '-', Code)) %>% 
   left_join(etr, by = 'Code') %>% 
   rename(Region_code = National_grouping) %>% 
   left_join(Region, by = c('Region_code' = 'Region Code')) %>% 
