@@ -222,9 +222,15 @@ Daily_cc_sitrep <- read_csv(paste0(github_repo_dir, '/daily_cc_adult_bed_occupan
   mutate(adult_beds_open = as.numeric(`CC Adult Open`)) %>% 
   mutate(adult_beds_available = adult_beds_open - adult_beds_occupied) %>% 
   mutate(Occupied_rate = adult_beds_occupied / adult_beds_open) %>% 
-  select(Code, Name, Date, adult_beds_open, adult_beds_available, adult_beds_occupied, Occupied_rate) %>% 
-  left_join(catchment_pop, by = 'Code') %>% 
-  mutate(cc_beds_per_100000 = (adult_beds_open / Emergency_catchment_pop_2017) * 100000)
+  select(Code, Date, adult_beds_open, adult_beds_available, adult_beds_occupied, Occupied_rate) %>% 
+  left_join(etr, by = 'Code') %>% 
+  rename(`Region Code` = National_grouping) %>% 
+  left_join(Region, by = 'Region Code') %>% 
+  left_join(catchment_pop, by = 'Code') %>%
+  mutate(cc_beds_per_100000 = (adult_beds_open / Emergency_catchment_pop_2017) * 100000) %>% 
+  rename(Region_code = `Region Code`,
+         Region_name = `Region name`) %>% 
+  select(Code, Name, Region_code, Region_name, Date, adult_beds_open, adult_beds_occupied, adult_beds_available, Occupied_rate, Emergency_catchment_pop_2017, cc_beds_per_100000)
 
 Daily_ga_sitrep <- read_csv(paste0(github_repo_dir, '/general_acute_bed_occupancy_daily_sitrep.csv')) %>% 
   gather(key = 'Metric', value = 'Beds', `Core Beds Open_43801`:`Occupancy rate_43891`) %>% 

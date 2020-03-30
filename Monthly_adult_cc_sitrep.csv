@@ -1,4 +1,4 @@
-"Code","Name","Region_code","Region_name","Date","Period","adult_beds_open","adult_beds_occupied","adult_beds_available","Percentage_adult_beds_available","Percentage_adult_cc_beds_occupied","Emergency_2017_catchment","cc_beds_per_100000"
+"Code","Name","Region_code","Region_name","Date","Period","adult_beds_open","adult_beds_occupied","adult_beds_available","Percentage_adult_beds_available","Percentage_adult_cc_beds_occupied","Emergency_catchment_pop_2017","cc_beds_per_100000"
 "R0A","Manchester University NHS Foundation Trust","Y62","North West Commissioning Region",2020-01-01,"January-2020",108,90,18,0.166666666666667,0.833333333333333,916232,11.7874075561648
 "R0B","South Tyneside and Sunderland NHS Foundation Trust","Y63","North East and Yorkshire Commissioning Region",2020-01-01,"January-2020",24,16,8,0.333333333333333,0.666666666666667,NA,NA
 "R1F","Isle of Wight NHS Trust","Y59","South East Commissioning Region",2020-01-01,"January-2020",6,3,3,0.5,0.5,132415,4.5312086999207
