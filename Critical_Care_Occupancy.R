@@ -2,7 +2,7 @@
 
 library(easypackages)
 
-libraries(c("readxl", "readr", "plyr", "dplyr", "ggplot2", "png", "tidyverse", "reshape2", "scales", "viridis", "rgdal", "officer", "flextable", "tmaptools", "lemon", "fingertipsR", "PHEindicatormethods", 'jsonlite', 'readODS', 'zoo'))
+libraries(c("readxl", "readr", "plyr", "dplyr", "ggplot2", "png", "tidyverse", "reshape2", "scales", "viridis", "rgdal", "officer", "flextable", "tmaptools", "lemon", "fingertipsR", "PHEindicatormethods", 'jsonlite', 'readODS', 'zoo', 'gridExtra'))
 
 github_repo_dir <- "~/Documents/Repositories/critical_care_sitrep"
 
@@ -52,15 +52,15 @@ etr <- read_csv(paste0(github_repo_dir, '/etr.csv'),col_names = c('Code', 'Name'
 
 # Hospital provider trusts do not have geographically defined boundaries for their population nor do they have complete lists of registered patients. However, modelled estimates of the catchment populations for hospital provider trusts in England are provided by Public Health England (PHE). These experimental statistics estimates the number of people who are using each hospital trust or have the potential to do so. Individual acute trusts sometimes use varying methods to define the population they serve, such as patient flow, CCG derived or travel time based estimates. PHE published modelled estimates use the patient flow method.
 
-catchment_pop <- read_excel(paste0(github_repo_dir, "/2019 Trust Catchment Populations Worksheet.xlsx"), sheet = "Trust Analysis", col_types = c("text", "text", "text", "text", "text", "numeric", "text", "text", "numeric", "numeric", "numeric", "numeric","numeric")) %>% 
+catchment_pop <- read_excel(paste0(github_repo_dir, "/2020 Trust Catchment Populations Worksheet.xlsx"), sheet = "Trust Analysis", col_types = c("text", "text", "text", "text", "text", "numeric", "text", "text", "numeric", "numeric", "numeric", "numeric","numeric")) %>% 
   group_by(CatchmentYear, TrustCode, TrustName, AdmissionType) %>% 
   summarise(Catchment = sum(Catchment, na.rm = TRUE)) %>% 
-  filter(CatchmentYear == 2017) %>% 
+  filter(CatchmentYear == 2018) %>% 
   filter(AdmissionType == 'Emergency') %>% 
-  rename(Emergency_catchment_pop_2017 = Catchment) %>% 
+  rename(Emergency_catchment_pop_2018 = Catchment) %>% 
   rename(Code = TrustCode) %>% 
   ungroup() %>% 
-  select(Code, Emergency_catchment_pop_2017)
+  select(Code, Emergency_catchment_pop_2018)
 
 catchment_pop %>% 
   write.csv(., paste0(github_repo_dir, '/trust_catchment_population_estimates.csv'), row.names = FALSE)
@@ -96,6 +96,7 @@ Monthly_cc_sitrep_1 <- filepaths_1 %>%
 filepaths_2 <- c('https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2018/04/MSitReps-December-CC-Revised-27.04.18.csv', 'https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2018/04/MSitReps-November-CC-Revised-27.04.18.csv', 'https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2018/04/MSitReps-October-CC-Revised-27.04.18.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2018/04/MSitReps-September-CC-Revised-27.04.18.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2018/04/MSitReps-August-CC-Revised-27.04.18.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2018/04/MSitReps-July-CC-Revised-27.04.18.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2018/04/MSitReps-June-CC-Revised-27.04.18.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2018/04/MSitReps-May-CC-Revised-27.04.18.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2018/04/MSitReps-April-CC-Revised-27.04.18.csv', 'https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-March-2017-Revised-27.10.2017-s65Bu.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-February-2017-Revised-27.10.2017-8v6Hy.csv', 'https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-January-2017-Revised-27.10.2017-Un45M.csv', 'https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-December-2016-n09YJ.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-November-2016-2B447.csv',  'https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-October-2016-JkigS.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-September-2016-3gThp.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-August-2016-76Sk0.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-July-2016-Revised-SqGaU.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-June-2016-Revised-g02SK.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-May-2016-Revised-a3i7N.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2016/05/Monthly-SITREPs-CC-Extracts-April-2016-Revised-lxIXm.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Monthly-SITREPs-CC-Extracts-fdjs.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Monthly-SITREPs-CC-Extracts-February-2016-Revised-nVt3S.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Monthly-SITREPs-CC-Extracts-jgsdd1.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Monthly-SITREPs-CC-Extracts-jgsdd.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Nov-csv-CC-fevcm.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Oct-csv-cc-fevcm.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Sept-csv-cc-fevcm.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Monthly-SITREPs-CC-Extracts-fjkiu.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Monthly-SITREPs-CC-Extracts-djery.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Monthly-SITREPs-CC-Extracts.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Monthly-SITREPS-CC-Extracts-May.csv','https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2015/05/Monthly-SITREPS-CC-Extracts-April.csv')
 
 Monthly_cc_sitrep_2 = data.frame(Code = character(), adult_beds_open = numeric(), adult_beds_occupied = numeric(), `Number of paediatric intensive care beds open` = numeric(), `Number of paediatric intensive care beds occupied` = numeric(), `Number of neonatal critical care cots (or beds) open` = numeric(), `Number of neonatal critical care cots (or beds) occupied` = numeric(), Period = character(), check.names = FALSE)      
+
 for(i in 1:length(filepaths_2)){
   Period_x <- read_csv(filepaths_2[i], skip = 1, n_max = 1, col_names = c('Year', 'Period', 'SHA', 'Org')) %>% 
     mutate(Year = gsub('Year:', '', Year)) %>% 
@@ -123,8 +124,9 @@ Monthly_cc_sitrep_2 <- Monthly_cc_sitrep_2 %>%
   select(Code, Name, Region_code, Region_name, Date, Period, adult_beds_open, adult_beds_occupied)
 
 # Not all trusts have names in the etr (possible due to mergers/closures)
-setdiff(Monthly_cc_sitrep_2$Code, etr$Code)
+#setdiff(Monthly_cc_sitrep_2$Code, etr$Code)
 
+# But it is only the old files (pre 2017)
 Monthly_cc_sitrep <- Monthly_cc_sitrep_1 %>%
   bind_rows(Monthly_cc_sitrep_2) %>% 
   mutate(adult_beds_available = adult_beds_open - adult_beds_occupied) %>% 
@@ -136,16 +138,336 @@ rm(Monthly_cc_sitrep_1, Monthly_cc_sitrep_2, Monthly_cc_sitrep_x, Period_x, file
 # Not all trusts have names in the etr (possible due to mergers/closures)
 #setdiff(Monthly_cc_sitrep$Code, etr$Code)
 
-# closed organisations have been remived from the dataset
-Monthly_cc_sitrep <- Monthly_cc_sitrep %>% 
+last_thursdays <- data.frame(DATE = seq(min(Monthly_cc_sitrep$Date), as.Date('2020-03-01'), "day")) %>% 
+  mutate(month = months(DATE), 
+         year = format(DATE, '%Y'),
+         weekday = weekdays(DATE)) %>%
+  group_by(month, year) %>%
+  filter(weekday == 'Thursday') %>%
+  filter(DATE == max(DATE)) %>% 
+  ungroup() %>% 
+  mutate(Period = paste0(month, '-', year)) %>% 
+  rename(last_thursday = DATE) %>% 
+  select(Period, last_thursday)
+
+Daily_cc_sitrep_1920 <- read_csv(paste0(github_repo_dir, '/Daily_adult_cc_sitrep_201920.csv')) %>% 
+  gather(key = "Metric", value = "Beds", `CC Adult Open_43801`:`Occupancy rate_43891`) %>% 
+  mutate(Date = as.Date(as.numeric(substr(Metric, nchar(Metric) - 4 , nchar(Metric))), origin = "1899-12-30")) %>% 
+  mutate(Metric = substr(Metric, 1, nchar(Metric) - 6)) %>% 
+  spread(Metric, Beds) %>% 
+  mutate(adult_beds_occupied = as.numeric(`CC Adult Occ`)) %>% 
+  mutate(adult_beds_open = as.numeric(`CC Adult Open`)) %>% 
+  mutate(adult_beds_available = adult_beds_open - adult_beds_occupied) %>% 
+  mutate(Occupied_rate = adult_beds_occupied / adult_beds_open) %>% 
+  select(Code, Date, adult_beds_open, adult_beds_available, adult_beds_occupied, Occupied_rate) %>% 
+  left_join(etr, by = 'Code') %>% 
+  rename(`Region Code` = National_grouping) %>% 
+  left_join(Region, by = 'Region Code') %>% 
+  left_join(catchment_pop, by = 'Code') %>%
+  mutate(cc_beds_per_100000 = (adult_beds_open / Emergency_catchment_pop_2018) * 100000) %>% 
+  rename(Region_code = `Region Code`,
+         Region_name = `Region name`) %>% 
+  select(Code, Name, Region_code, Region_name, Date, adult_beds_open, adult_beds_occupied, adult_beds_available, Occupied_rate, Emergency_catchment_pop_2018, cc_beds_per_100000)
+
+monthly_return_from_daily <- Daily_cc_sitrep_1920 %>% 
+  filter(Date %in% last_thursdays$last_thursday)  
+
+# closed organisations have been removed from the dataset
+Monthly_cc_sitrep<- Monthly_cc_sitrep %>% 
   mutate(Name = ifelse(Code == 'ENGLAND', 'England', Name)) %>% 
   mutate(Code = ifelse(Code == 'ENGLAND', '-', Code)) %>% 
   filter(!is.na(Name)) %>% 
+  left_join(last_thursdays, by = 'Period') %>% 
   left_join(catchment_pop, by = 'Code') %>% 
-  mutate(cc_beds_per_100000 = (adult_beds_open / Emergency_catchment_pop_2017) * 100000)
+  mutate(cc_beds_per_100000 = (adult_beds_open / Emergency_catchment_pop_2018) * 100000) %>% 
+  mutate(occupancy_above_85 = ifelse(Percentage_adult_cc_beds_occupied >= .85, '>= 85%', 'below 85%'))
 
 Monthly_cc_sitrep %>% 
   write.csv(., paste0(github_repo_dir, '/Monthly_adult_cc_sitrep.csv'), row.names = FALSE)
+
+Providers_dec <- Monthly_cc_sitrep %>% 
+  filter(Period == 'December-2019') %>% 
+  select(Code, Name,  Region_code, Region_name) %>% 
+  unique() 
+
+Providers_dec_daily <- Daily_cc_sitrep_1920 %>% 
+  filter(Date == '2019-12-26') %>% 
+  unique()
+
+# setdiff(Providers_dec$Name, Providers_dec_daily$Name)
+
+Providers <- Monthly_cc_sitrep %>% 
+  select(Code, Name,  Region_code, Region_name) %>% 
+  unique() 
+
+# What does normal look like? ####
+
+# write a report detailing key metrics
+
+Eng_monthly_sitrep <- Monthly_cc_sitrep %>%
+  filter(Name == 'England')
+
+se_sitrep <- Monthly_cc_sitrep %>%
+  filter(Region_name == 'South East Commissioning Region') %>%
+  arrange(Name, Date) %>%
+  group_by(Date, Period, last_thursday) %>%
+  summarise(adult_beds_open = sum(adult_beds_open, na.rm = TRUE),
+            adult_beds_occupied = sum(adult_beds_occupied, na.rm = TRUE),
+            adult_beds_available = sum(adult_beds_available, na.rm = TRUE)) %>%
+  mutate(Percentage_adult_cc_beds_occupied = adult_beds_occupied / adult_beds_open) %>%
+  mutate(Name = 'South East Commissioning Region',
+         Code = '-')
+
+n_se_providers <- Providers %>% 
+  filter(Region_code == 'Y59') %>% 
+  unique() %>% 
+  nrow()
+
+stp_sitrep <- Monthly_cc_sitrep %>%
+  filter(Name %in% c('Brighton and Sussex University Hospitals NHS Trust', 'East Sussex Healthcare NHS Trust', 'Queen Victoria Hospital NHS Foundation Trust', 'Surrey and Sussex Healthcare NHS Trust', 'Western Sussex Hospitals NHS Foundation Trust')) %>%
+  group_by(Date, Period, last_thursday) %>%
+  summarise(adult_beds_open = sum(adult_beds_open, na.rm = TRUE),
+            adult_beds_occupied = sum(adult_beds_occupied, na.rm = TRUE),
+            adult_beds_available = sum(adult_beds_available, na.rm = TRUE)) %>%
+  mutate(Percentage_adult_cc_beds_occupied = adult_beds_occupied / adult_beds_open) %>%
+  mutate(Name = 'Sussex and East Surrey STP acute trusts',
+         Code = '-')
+
+sitrep_beds <- Eng_monthly_sitrep %>% 
+  bind_rows(se_sitrep) %>% 
+  bind_rows(stp_sitrep) %>% 
+  arrange(Date) %>% 
+  mutate(Period = factor(Period, levels = unique(Period))) %>% 
+  mutate(last_thursday = as.character(format(last_thursday, '%d/%m/%Y'))) %>% 
+  mutate(Percentage_adult_cc_beds_available = adult_beds_available / adult_beds_open) %>% 
+  mutate(Percentage_adult_cc_beds_occupied = adult_beds_occupied / adult_beds_open) %>% 
+  select(Code, Name, Date, Period, last_thursday, adult_beds_open, adult_beds_available, adult_beds_occupied, Percentage_adult_cc_beds_available, Percentage_adult_cc_beds_occupied) %>% 
+  as.data.frame() %>% 
+  mutate(occupancy_above_85 = ifelse(Percentage_adult_cc_beds_occupied >= .85, '>= 85%', 'below 85%'))
+
+latest_sitrep_beds <- sitrep_beds %>% 
+  filter(Date == max(Date))
+
+jan_19_sitrep_beds <- sitrep_beds %>% 
+  filter(Period == 'January-2019')
+
+paste0('The latest monthly data for critical care bed occupancy is for ', unique(latest_sitrep_beds$Period), ' and this indicates that nationally as at midnight on the ', unique(latest_sitrep_beds$last_thursday), ' there were ', format(subset(latest_sitrep_beds, Name == 'England', select = 'adult_beds_open'), big.mark = ','), ' open critical care beds (adult beds). Of these, ', format(subset(latest_sitrep_beds, Name == 'England', select = 'adult_beds_occupied'), big.mark = ','), ' were occupied (', round(subset(latest_sitrep_beds, Name == 'England', select = 'Percentage_adult_cc_beds_occupied') * 100, 1), '%). In January 2019, the occupancy rate was ', round(subset(jan_19_sitrep_beds, Name == 'England', select = 'Percentage_adult_cc_beds_occupied') * 100, 1), '% with ', format(subset(jan_19_sitrep_beds, Name == 'England', select = 'adult_beds_occupied'), big.mark = ','), ' beds out of ', format(subset(jan_19_sitrep_beds, Name == 'England', select = 'adult_beds_open'), big.mark = ','),' occupied.')
+
+paste0('Across England at midnight on ', unique(latest_sitrep_beds$last_thursday), ' there were ', format(subset(latest_sitrep_beds, Name == 'England', select = 'adult_beds_available'), big.mark = ','), ' beds available for new patients.')
+
+paste0('There are ', n_se_providers, ' NHS organisations providing critical care beds in the South East Commissioning Region. Across the commissioning region, at midnight on ', unique(latest_sitrep_beds$last_thursday), ' there were ', format(subset(latest_sitrep_beds, Name == 'South East Commissioning Region', select = 'adult_beds_open'), big.mark = ','), ' open critical care beds (adult beds) with ', format(subset(latest_sitrep_beds, Name == 'South East Commissioning Region', select = 'adult_beds_occupied'), big.mark = ','), ' occupied (', round(subset(latest_sitrep_beds, Name == 'South East Commissioning Region', select = 'Percentage_adult_cc_beds_occupied') * 100, 1), '%). This occupancy rate is lower than in England overall in the latest available data.')
+
+paste0('Across the South East Commissioning Region at midnight on ', unique(latest_sitrep_beds$last_thursday), ' there were ', format(subset(latest_sitrep_beds, Name == 'South East Commissioning Region', select = 'adult_beds_available'), big.mark = ','), ' beds available for new patients.')
+
+paste0('More locally, the Sussex and East Surrey Sustainability and Transformation Partnership (STP) comprises five acute hospital trusts which provider critical care beds (Brighton and Sussex University Hospitals NHS Trust, East Sussex Healthcare NHS Trust, Queen Victoria Hospital NHS Foundation Trust, Surrey and Sussex Healthcare NHS Trust, and Western Sussex Hospitals NHS Foundation Trust). The January 2020 data indicates that across the STP, hospital trusts have ', format(subset(latest_sitrep_beds, Name == 'Sussex and East Surrey STP acute trusts', select = 'adult_beds_open'), big.mark = ','), ' open critical care beds (adult beds) with ', format(subset(latest_sitrep_beds, Name == 'Sussex and East Surrey STP acute trusts', select = 'adult_beds_occupied'), big.mark = ','), ' occupied (', round(subset(latest_sitrep_beds, Name == 'Sussex and East Surrey STP acute trusts', select = 'Percentage_adult_cc_beds_occupied') * 100, 1), '%). This occupancy rate is marginally lower than in England overall in the latest available data and higher than in the South East Commissioning region.')
+
+paste0('Across the Sussex and East Surrey STP at midnight on ', unique(latest_sitrep_beds$last_thursday), ' there were ', format(subset(latest_sitrep_beds, Name == 'Sussex and East Surrey STP acute trusts', select = 'adult_beds_available'), big.mark = ','), ' beds available for new patients.')
+
+paste0('A critical care capacity research study conducted in 2018 by The Faculty of Intensive Care Medicine reports that the highest rate recommended for safe and efficient patient care is 85%. see - https://www.ficm.ac.uk/sites/default/files/ficm_critical_capacity_-_a_short_research_survey_on_critical_care_bed_capacity.pdf')
+
+paste0('Operating above this capacity means providers can struggle to cope with variation, respond to crises, and this leads to cancelling operations, or needing to transfer very ill patients to other hospitals.')
+
+paste0('The Guidelines for the Provision of Intensive Care Services (GPICS) in 2019 recommends a ratio of one critical care bed per 35 acute hospital beds.')
+
+sitrep_beds_1 <- sitrep_beds %>% 
+  rename(Area = Name)
+
+ggplot(sitrep_beds, aes(x = Period, y = Percentage_adult_cc_beds_occupied)) +
+  geom_line(data = sitrep_beds_1, aes(x = Period, y = Percentage_adult_cc_beds_occupied, group = Area), colour = '#c5c5c5') +
+  geom_line(aes(group = Name),
+            colour = '#000000') +
+  geom_point(aes(fill = occupancy_above_85),
+             size = 2,
+             colour = '#ffffff',
+             shape = 21) +
+  scale_fill_manual(values = c('#660066', '#FA6900'),
+                    name = 'Occupancy (%)') +
+  scale_y_continuous(limits = c(0.6,1),
+                     breaks = seq(0,1,.1),
+                     labels = percent_format(accuracy = 1),
+                     expand = c(0,0.01)) +
+  labs(title = 'Critical care beds (adults) occupied as a proportion of open critical care beds',
+       caption = 'Note: y axis does not start at zero.\nThe dashed line represents the 85% occupancy recommended limit for safe and efficient patient care.',
+       x = 'Last Thursday of each month',
+       y = 'Proportion of critical care beds occupied') +
+  geom_hline(aes(yintercept = .85),
+             colour = "#3d2b65",
+             linetype="dashed",
+             lwd = .5) +
+  facet_rep_grid(Name ~., repeat.tick.labels = FALSE) +
+  ph_theme() +
+  theme(axis.text.x = element_text(angle = 90)) +
+  theme(strip.text = element_blank()) +
+  annotate(geom = "text", label = c('England','South East Commissioning Region','Sussex and East Surrey STP'), x = 1, y = .97, size = 3, fontface = "bold", hjust = 0)
+
+sitrep_beds %>% 
+  filter(Date >= '2019-02-01') %>% 
+  group_by(Name, occupancy_above_85) %>% 
+  # summarise(n()) %>% 
+  filter(occupancy_above_85 == '>= 85%')
+
+paste0('In the past 12 months (February 2019 - January 2020), occupancy of critical care beds did not exceed 85% in England overall or in South East Commissioning Region. However, in Sussex and East Surrey STP, the occupancy exceeded the safe level once, in May 2019 when occupancy reached 91.2% (103 out of 113 beds).')
+
+# Occupancy over time, peaks and average occupancy
+
+sitrep_beds %>% 
+  select(Name, Period, Percentage_adult_cc_beds_occupied) %>% 
+  spread(Period, Percentage_adult_cc_beds_occupied) %>% 
+  select(Name, `January-2019`, `January-2020`)
+
+sitrep_beds %>% 
+  select(Name, Period, adult_beds_occupied) %>% 
+  spread(Period, adult_beds_occupied) %>% 
+  select(Name, `January-2019`, `January-2020`)
+
+sitrep_beds %>% 
+  select(Name, Period, adult_beds_open) %>% 
+  spread(Period, adult_beds_open) %>% 
+  select(Name, `January-2019`, `January-2020`)
+
+sitrep_beds %>% 
+  select(Name, Period, adult_beds_open) %>% 
+  group_by(Name) %>% 
+  filter(adult_beds_open == max(adult_beds_open))
+
+sitrep_beds %>% 
+  select(Name, Period, adult_beds_available) %>% 
+  group_by(Name) %>% 
+  filter(adult_beds_available == max(adult_beds_available))
+
+sitrep_beds %>% 
+  select(Name, Date, adult_beds_available) %>% 
+  # filter(Date >= '2019-01-01') %>% 
+  group_by(Name) %>% 
+  summarise(available = mean(adult_beds_available))
+
+# They have forecast the percentage of COVID-19 bed requirements in isolation. In reality, all ICUs will need to continue to provide ‘business as usual’ care for other types of patients. Since UK bed occupancy is typically greater than 80% and may frequently exceed 100%, the researchers say it is clearly not the case that all open beds can simply be re-allocated for COVID-19 patients.
+
+# They have also assumed that all adult critical care beds can be used for level 3 or mechanically ventilated ICU patients, which may not be possible; some specialist ICUs may not be able to reconfigure at all.
+
+# sitrep_beds <- sitrep_beds %>% 
+#   mutate()
+
+# Trust variation ####
+
+trust_sitrep <- Monthly_cc_sitrep %>%
+  filter(Name %in% c('Brighton and Sussex University Hospitals NHS Trust', 'East Sussex Healthcare NHS Trust', 'Queen Victoria Hospital NHS Foundation Trust', 'Surrey and Sussex Healthcare NHS Trust', 'Western Sussex Hospitals NHS Foundation Trust')) %>% 
+  arrange(Name, Date) %>% 
+  mutate(Period = factor(Period, levels = unique(Period))) %>% 
+  arrange(Period) %>% 
+  select(Code, Name, Period, adult_beds_occupied, adult_beds_available, adult_beds_open) %>% 
+  gather(key = "Status", value = "Beds", c(adult_beds_occupied, adult_beds_available))
+
+ggplot(trust_sitrep, aes(x = Period, y = Beds, group = Status, fill = Status)) +
+  geom_bar(stat = "identity", width = 0.8) +
+  scale_fill_manual(values = c('#f9ac26', '#DBDBDB'),
+                    name = 'Bed status',
+                    labels = c('Available', 'Occupied')) +
+  scale_y_continuous(breaks = seq(0,120, 20)) +
+  ph_theme() +
+  labs(title = 'Critical care beds (adults); Sussex and East Surrey STP Trusts; April 2015-January 2020;',
+       x = 'Last Thursday of each month',
+       y = 'Number of critical care beds occupied') +
+  theme(axis.text.x = element_text(angle = 90))
+
+Jan_2020_ses_stp <- trust_sitrep %>% 
+  filter(Period == 'January-2020') %>% 
+  arrange(adult_beds_open) %>% 
+  mutate(Name = ifelse(Name == 'Brighton and Sussex University Hospitals NHS Trust', 'Brighton and Sussex\nUniversity Hospitals\nNHS Trust', ifelse(Name == 'Western Sussex Hospitals NHS Foundation Trust', 'Western Sussex\nHospitals NHS\nFoundation Trust', ifelse(Name == 'East Sussex Healthcare NHS Trust', 'East Sussex\nHealthcare\nNHS Trust', ifelse(Name == 'Surrey and Sussex Healthcare NHS Trust','Surrey and Sussex\nHealthcare\nNHS Trust', ifelse(Name == 'Queen Victoria Hospital NHS Foundation Trust', 'Queen Victoria\nHospital NHS\nFoundation Trust', Name)))))) %>% 
+  mutate(Name = factor(Name, levels = unique(Name))) %>% 
+  mutate(Percentage_beds = Beds / adult_beds_open)
+
+n_beds_occupied_jan_trust <- ggplot(Jan_2020_ses_stp, aes(x = Name, y = Beds, group = Status, fill = Status)) +
+  geom_bar(stat = "identity", width = 0.8) +
+  scale_fill_manual(values = c('#f9ac26', '#DBDBDB'),
+                    name = 'Bed status',
+                    labels = c('Available', 'Occupied')) +
+  coord_flip() +
+  labs(x = NULL,
+       y = 'Beds') +
+  ph_theme() 
+
+p_beds_occupied_jab_trust <- ggplot(Jan_2020_ses_stp, aes(x = Name, y = Percentage_beds, group = Status, fill = Status)) +
+  geom_bar(stat = "identity", width = 0.8) +
+  scale_fill_manual(values = c('#f9ac26', '#DBDBDB'),
+                    name = 'Bed status',
+                    labels = c('Available', 'Occupied')) +
+  labs(x = NULL,
+       y = 'Percentage') +
+  scale_y_continuous(breaks = seq(0,1,.1),
+                     labels = percent) +
+  coord_flip() +
+  ph_theme() +
+  theme(axis.text.y = element_blank())
+
+grid.arrange(n_beds_occupied_jan_trust, p_beds_occupied_jab_trust, ncol=2, top = 'Critical care beds by bed status; Sussex and East Surrey STP; January 2020; Number of beds and percentage', widths = c(2.1,1.8))
+
+
+local_trust_cc <- Daily_cc_sitrep %>% 
+  filter(Name == 'ENGLAND')
+
+ggplot(data = local_trust_cc, aes(x = Date, y = Occupied_rate, group = 1)) +
+  geom_line(colour = '#999999') +
+  geom_point(size = 2, 
+             shape = 21) +
+  labs(title = 'Daily Critical Care bed (Adults) occupancy as a proportion of open Critical Care beds',
+    subtitle = paste0(unique(local_trust$Name), ' (', unique(local_trust$Code), ')'),
+       x = 'Day',
+       y = 'Critical care bed occupancy proportion') +
+  scale_y_continuous(limit = c(.75, 1), 
+                     label = percent) +
+  scale_x_date(date_labels = "%b %d (%A)",
+               date_breaks = '1 week',
+               date_minor_breaks = '1 day') +
+  ph_theme() +
+  theme(axis.text.x = element_text(angle = 90))
+
+local_trust_ga <- Daily_ga_sitrep %>% 
+  filter(Name == 'ENGLAND')
+
+ggplot(data = local_trust_ga, aes(x = Date, y = Occupied_rate, group = 1)) +
+  geom_line(colour = '#999999') +
+  geom_point(size = 2, 
+             shape = 21) +
+  labs(title = 'Daily general and acute bed occupancy as a proportion of all open beds',
+       subtitle = paste0(unique(local_trust$Name), ' (', unique(local_trust$Code), ')'),
+       x = 'Day',
+       y = 'G&A bed occupancy proportion') +
+  scale_y_continuous(limit = c(.75, 1), 
+                     label = percent) +
+  scale_x_date(date_labels = "%b %d (%A)",
+               date_breaks = '1 week',
+               date_minor_breaks = '1 day') +
+  ph_theme() +
+  theme(axis.text.x = element_text(angle = 90))
+
+
+# MSitRep data are published to a monthly timetable with data being published around 6 to 7 weeks after the end of the reference period
+
+# Organisation names and codes change all the time, and nhs regions change too.    
+  
+# Critical care capacity, including adult, paediatric and neonatal available and occupied critical care beds, as a snapshot at midnight on the last Thursday of the month.
+
+# Count all adult critical care (ITU, HDU or other) beds that are funded and available for critical care patients (Levels 2 and 3) at midnight on the last Thursday of the reporting period. Note that this should be the actual number of beds at that time and not the planned number of beds. Beds funded but not available due to staff vacancies should not be counted unless the vacancies have been filled by bank or agency staff. Beds that are not funded, but are occupied should be counted.
+
+# This count should be consistent with that provided for the KH03a return. The definitions of critical care levels are:
+  # Level 1 – Patients at risk of their condition deteriorating or those recently relocated from higher levels of care, whose needs can be met on an acute ward with additional advice and support from the critical care team. (NB These patients are NOT included in SitRep returns).
+
+  # Level 2 – Patients requiring more detailed observation or intervention including support for a single failing organ system or post operative care and those “stepping down” from higher levels of care. Also known as High Dependency.
+
+  # Level 3 – Patients requiring advanced respiratory support alone or basic respiratory support together with support of at least two organ systems. This level includes all complex patients requiring support for multi-organ failure. Also known as Intensive Care.
+
+# Paediatric intensive care at level 3, also known as paediatric advanced critical care (provided by Trusts commissioned to deliver this care). In order to provide the appropriate level of care for paediatric intensive care (level 3), a minimum nurse to patient ratio of 1:1 is required. There are 20 Trusts who are commissioned to provide Paediatric Intensive care (Level 3) across England (equating to 22 units) This collection aims to look at capacity levels. Therefore, all open level 3 beds should be counted and figures for occupied beds should include all patients in level 3 beds (regardless of patient characteristics and the nature of care they receive). PICANet 2018 Annual Report and Paediatric Intensive Care (PICS) Nurse Workforce Planning for level 3 Paediatric Critical Care Units Paediatric Intensive Care Surge Standard Operating Procedure
+
+# F3i) The total number of neonatal intensive care cots (or beds) open at midnight on the last Thursday of the reporting period
+# F3ii) The total number of occupied neonatal intensive care cots (or beds) at midnight on the last Thursday of the reporting period
+# Defined as:
+  # High dependency care
+# Higher levels of clinical care including babies recovering from intensive care. This includes babies receiving oxygen for immature lungs as they breathe on their own, sometimes assisted by higher pressure given via nasal prongs; babies on intravenous nutrition or treated with chest drains or for convulsions, infections or metabolic problems.
+# Neonatal Critical Care
+# Babies born prematurely, simply to support organ systems until they have matured; and babies who are ill or who have congenital disorders. This includes support in breathing (often with mechanical ventilation), to protect from infection and to achieve growth equivalent to that which occurs in the womb. Even “well” very premature babies require intensive care simply to support their life until their organ systems undergo maturity. Short term intensive care may also be provided for less immature babies who need mechanical assistance from a ventilator to breathe and for some this may only be for 1 to 2 days as the effect of artificial substances (surfactant) given through the breathing tube located in their lungs takes effect and they can move to high dependency care.
+# Sophisticated mechanical ventilation with oxygen, intravenous feeding, and the use of incubators to control body temperature and protect from infection. Care may also involve treatment of illnesses that are more common in vulnerable babies. NIC is also required for a small number of larger, more mature, babies who become ill from complications of delivery, from infection or metabolic disorders or when surgical or other treatment is required for congenital anomalies such as congenital heart disease, disorders of the lung or gut, or of other organs.
+  
 
 # df1 <-Monthly_cc_sitrep %>%
 #   group_by(Name) %>% 
@@ -214,25 +536,6 @@ Monthly_cc_sitrep %>%
 #         legend.title = element_text(face = 'bold', size = 8))
 
 
-Daily_cc_sitrep <- read_csv(paste0(github_repo_dir, '/daily_cc_adult_bed_occupancy.csv')) %>% 
-  gather(key = "Metric", value = "Beds", `CC Adult Open_43801`:`Occupancy rate_43891`) %>% 
-  mutate(Date = as.Date(as.numeric(substr(Metric, nchar(Metric) - 4 , nchar(Metric))), origin = "1899-12-30")) %>% 
-  mutate(Metric = substr(Metric, 1, nchar(Metric) - 6)) %>% 
-  spread(Metric, Beds) %>% 
-  mutate(adult_beds_occupied = as.numeric(`CC Adult Occ`)) %>% 
-  mutate(adult_beds_open = as.numeric(`CC Adult Open`)) %>% 
-  mutate(adult_beds_available = adult_beds_open - adult_beds_occupied) %>% 
-  mutate(Occupied_rate = adult_beds_occupied / adult_beds_open) %>% 
-  select(Code, Date, adult_beds_open, adult_beds_available, adult_beds_occupied, Occupied_rate) %>% 
-  left_join(etr, by = 'Code') %>% 
-  rename(`Region Code` = National_grouping) %>% 
-  left_join(Region, by = 'Region Code') %>% 
-  left_join(catchment_pop, by = 'Code') %>%
-  mutate(cc_beds_per_100000 = (adult_beds_open / Emergency_catchment_pop_2017) * 100000) %>% 
-  rename(Region_code = `Region Code`,
-         Region_name = `Region name`) %>% 
-  select(Code, Name, Region_code, Region_name, Date, adult_beds_open, adult_beds_occupied, adult_beds_available, Occupied_rate, Emergency_catchment_pop_2017, cc_beds_per_100000)
-
 Daily_ga_sitrep <- read_csv(paste0(github_repo_dir, '/general_acute_bed_occupancy_daily_sitrep.csv')) %>% 
   gather(key = 'Metric', value = 'Beds', `Core Beds Open_43801`:`Occupancy rate_43891`) %>% 
   mutate(Date = as.Date(as.numeric(substr(Metric, nchar(Metric) - 4 , nchar(Metric))), origin = "1899-12-30")) %>% 
@@ -249,125 +552,3 @@ Daily_cc_sitrep %>%
 
 Daily_ga_sitrep %>% 
   write.csv(., paste0(github_repo_dir, '/Daily_adult_ga_sitrep.csv'), row.names = FALSE)
-
-Providers <- Monthly_cc_sitrep %>% 
-  select(Code, Name,  Region_code, Region_name) %>% 
-  unique() 
-
-SE_sitrep <- Monthly_cc_sitrep %>% 
-  filter(Region_name == 'South East Commissioning Region') %>% 
-  arrange(Name, Date) %>% 
-  mutate(Highlight = ifelse(Name == 'Western Sussex Hospitals NHS Foundation Trust', 'Western Sussex Hospitals NHS Foundation Trust', '')) %>% 
-  mutate(Period = factor(Period, levels = unique(Period)))
-
-ggplot(SE_sitrep, aes(x = Period, y = Percentage_adult_beds_available, group = Name, colour = Highlight)) +
-  geom_line() +
-  scale_colour_manual(values = c('#DBDBDB', '#660066')) +
-  scale_y_continuous(labels = percent) +
-  # geom_point(size = 2, 
-  #            shape = 21) +
-  labs(title = 'Critical Care bed (Adults) availability as a proportion of open Critical Care beds',
-       x = 'Last Thursday of each month',
-       y = 'Proportion of critical care beds available') +
-  ph_theme() +
-  theme(axis.text.x = element_text(angle = 90))
-
-# Sussex and East Surrey STP
-ses_stp <- SE_sitrep %>% 
-  filter(Name %in% c('Brighton and Sussex University Hospitals NHS Trust', 'East Sussex Healthcare NHS Trust', 'Queen Victoria Hospital NHS Foundation Trust', 'Surrey and Sussex Healthcare NHS Trust', 'Western Sussex Hospitals NHS Foundation Trust')) %>% 
-  arrange(Period) %>% 
-  select(Code, Name, Period, adult_beds_occupied, adult_beds_available, adult_beds_open) %>% 
-  gather(key = "Status", value = "Beds", c(adult_beds_occupied, adult_beds_available))
-
-ggplot(ses_stp, aes(x = Period, y = Beds, group = Status, fill = Status)) +
-  geom_bar(stat = "identity", width = 0.8) +
-  scale_fill_manual(values = c('#f9ac26', '#DBDBDB')) +
-  scale_y_continuous() +
-  ph_theme() +
-  theme(axis.text.x = element_text(angle = 90))
-
-Jan_2020_ses_stp <- ses_stp %>% 
-  filter(Period == 'January-2020') %>% 
-  arrange(adult_beds_open) %>% 
-  mutate(Name = factor(Name, levels = unique(Name))) %>% 
-  mutate(Percentage_beds = Beds / adult_beds_open)
-
-ggplot(Jan_2020_ses_stp, aes(x = Name, y = Beds, group = Status, fill = Status)) +
-  geom_bar(stat = "identity", width = 0.8) +
-  scale_fill_manual(values = c('#f9ac26', '#DBDBDB')) +
-  coord_flip() +
-  ph_theme() 
-
-ggplot(Jan_2020_ses_stp, aes(x = Name, y = Percentage_beds, group = Status, fill = Status)) +
-  geom_bar(stat = "identity", width = 0.8) +
-  scale_fill_manual(values = c('#f9ac26', '#DBDBDB')) +
-  scale_y_continuous(breaks = seq(0,1,.1),
-                     labels = percent) +
-  coord_flip() +
-  ph_theme() 
-
- local_trust_cc <- Daily_cc_sitrep %>% 
-  filter(Name == 'ENGLAND')
-
-ggplot(data = local_trust_cc, aes(x = Date, y = Occupied_rate, group = 1)) +
-  geom_line(colour = '#999999') +
-  geom_point(size = 2, 
-             shape = 21) +
-  labs(title = 'Daily Critical Care bed (Adults) occupancy as a proportion of open Critical Care beds',
-    subtitle = paste0(unique(local_trust$Name), ' (', unique(local_trust$Code), ')'),
-       x = 'Day',
-       y = 'Critical care bed occupancy proportion') +
-  scale_y_continuous(limit = c(.75, 1), 
-                     label = percent) +
-  scale_x_date(date_labels = "%b %d (%A)",
-               date_breaks = '1 week',
-               date_minor_breaks = '1 day') +
-  ph_theme() +
-  theme(axis.text.x = element_text(angle = 90))
-
-local_trust_ga <- Daily_ga_sitrep %>% 
-  filter(Name == 'ENGLAND')
-
-ggplot(data = local_trust_ga, aes(x = Date, y = Occupied_rate, group = 1)) +
-  geom_line(colour = '#999999') +
-  geom_point(size = 2, 
-             shape = 21) +
-  labs(title = 'Daily general and acute bed occupancy as a proportion of all open beds',
-       subtitle = paste0(unique(local_trust$Name), ' (', unique(local_trust$Code), ')'),
-       x = 'Day',
-       y = 'G&A bed occupancy proportion') +
-  scale_y_continuous(limit = c(.75, 1), 
-                     label = percent) +
-  scale_x_date(date_labels = "%b %d (%A)",
-               date_breaks = '1 week',
-               date_minor_breaks = '1 day') +
-  ph_theme() +
-  theme(axis.text.x = element_text(angle = 90))
-
-
-# MSitRep data are published to a monthly timetable with data being published around 6 to 7 weeks after the end of the reference period
-
-# Organisation names and codes change all the time, and nhs regions change too.    
-  
-# Critical care capacity, including adult, paediatric and neonatal available and occupied critical care beds, as a snapshot at midnight on the last Thursday of the month.
-
-# Count all adult critical care (ITU, HDU or other) beds that are funded and available for critical care patients (Levels 2 and 3) at midnight on the last Thursday of the reporting period. Note that this should be the actual number of beds at that time and not the planned number of beds. Beds funded but not available due to staff vacancies should not be counted unless the vacancies have been filled by bank or agency staff. Beds that are not funded, but are occupied should be counted.
-
-# This count should be consistent with that provided for the KH03a return. The definitions of critical care levels are:
-  # Level 1 – Patients at risk of their condition deteriorating or those recently relocated from higher levels of care, whose needs can be met on an acute ward with additional advice and support from the critical care team. (NB These patients are NOT included in SitRep returns).
-
-  # Level 2 – Patients requiring more detailed observation or intervention including support for a single failing organ system or post operative care and those “stepping down” from higher levels of care. Also known as High Dependency.
-
-  # Level 3 – Patients requiring advanced respiratory support alone or basic respiratory support together with support of at least two organ systems. This level includes all complex patients requiring support for multi-organ failure. Also known as Intensive Care.
-
-# Paediatric intensive care at level 3, also known as paediatric advanced critical care (provided by Trusts commissioned to deliver this care). In order to provide the appropriate level of care for paediatric intensive care (level 3), a minimum nurse to patient ratio of 1:1 is required. There are 20 Trusts who are commissioned to provide Paediatric Intensive care (Level 3) across England (equating to 22 units) This collection aims to look at capacity levels. Therefore, all open level 3 beds should be counted and figures for occupied beds should include all patients in level 3 beds (regardless of patient characteristics and the nature of care they receive). PICANet 2018 Annual Report and Paediatric Intensive Care (PICS) Nurse Workforce Planning for level 3 Paediatric Critical Care Units Paediatric Intensive Care Surge Standard Operating Procedure
-
-# F3i) The total number of neonatal intensive care cots (or beds) open at midnight on the last Thursday of the reporting period
-# F3ii) The total number of occupied neonatal intensive care cots (or beds) at midnight on the last Thursday of the reporting period
-# Defined as:
-  # High dependency care
-# Higher levels of clinical care including babies recovering from intensive care. This includes babies receiving oxygen for immature lungs as they breathe on their own, sometimes assisted by higher pressure given via nasal prongs; babies on intravenous nutrition or treated with chest drains or for convulsions, infections or metabolic problems.
-# Neonatal Critical Care
-# Babies born prematurely, simply to support organ systems until they have matured; and babies who are ill or who have congenital disorders. This includes support in breathing (often with mechanical ventilation), to protect from infection and to achieve growth equivalent to that which occurs in the womb. Even “well” very premature babies require intensive care simply to support their life until their organ systems undergo maturity. Short term intensive care may also be provided for less immature babies who need mechanical assistance from a ventilator to breathe and for some this may only be for 1 to 2 days as the effect of artificial substances (surfactant) given through the breathing tube located in their lungs takes effect and they can move to high dependency care.
-# Sophisticated mechanical ventilation with oxygen, intravenous feeding, and the use of incubators to control body temperature and protect from infection. Care may also involve treatment of illnesses that are more common in vulnerable babies. NIC is also required for a small number of larger, more mature, babies who become ill from complications of delivery, from infection or metabolic disorders or when surgical or other treatment is required for congenital anomalies such as congenital heart disease, disorders of the lung or gut, or of other organs.
-  
