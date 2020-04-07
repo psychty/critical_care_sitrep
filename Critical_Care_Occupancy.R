@@ -110,8 +110,21 @@ for(i in 1:length(filepaths_2)){
   Monthly_cc_sitrep_2 = Monthly_cc_sitrep_2 %>% 
     bind_rows(Monthly_cc_sitrep_x)
 }
+ 
+
+March_15 <- read_csv('https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2014/05/Monthly-SITREPS-CC-Extracts-March.csv', skip = 6, col_names = c('Code', 'adult_beds_open', 'adult_beds_occupied', 'Number of paediatric intensive care beds open', 'Number of paediatric intensive care beds occupied', 'Number of neonatal critical care cots (or beds) open', 'Number of neonatal critical care cots (or beds) occupied')) %>% 
+  mutate(Period = 'March-2015')
+
+Feb_15 <- read_csv('https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2014/05/Monthly-SITREPS-CC-Extracts-February.csv', skip = 6, col_names = c('Code', 'adult_beds_open', 'adult_beds_occupied', 'Number of paediatric intensive care beds open', 'Number of paediatric intensive care beds occupied', 'Number of neonatal critical care cots (or beds) open', 'Number of neonatal critical care cots (or beds) occupied')) %>% 
+  mutate(Period = 'February-2015')
+
+Jan_15 <- read_csv('https://www.england.nhs.uk/statistics/wp-content/uploads/sites/2/2014/05/Monthly-SITREPs-CC-Extracts9g5ud.csv', skip = 6, col_names = c('Code', 'adult_beds_open', 'adult_beds_occupied', 'Number of paediatric intensive care beds open', 'Number of paediatric intensive care beds occupied', 'Number of neonatal critical care cots (or beds) open', 'Number of neonatal critical care cots (or beds) occupied')) %>% 
+  mutate(Period = 'January-2015')
 
 Monthly_cc_sitrep_2 <- Monthly_cc_sitrep_2 %>% 
+  bind_rows(March_15) %>% 
+  bind_rows(Feb_15) %>% 
+  bind_rows(Jan_15) %>% 
   mutate(Code = ifelse(Code == 'ENGLAND', '-', Code)) %>% 
   left_join(etr, by = 'Code') %>% 
   rename(Region_code = National_grouping) %>% 
@@ -133,7 +146,7 @@ Monthly_cc_sitrep <- Monthly_cc_sitrep_1 %>%
   mutate(Percentage_adult_beds_available = ifelse(adult_beds_open == 0, NA, adult_beds_available / adult_beds_open)) %>% 
   mutate(Percentage_adult_cc_beds_occupied = ifelse(adult_beds_open == 0, NA, adult_beds_occupied / adult_beds_open))
 
-rm(Monthly_cc_sitrep_1, Monthly_cc_sitrep_2, Monthly_cc_sitrep_x, Period_x, filepaths_1, filepaths_2)
+rm(Monthly_cc_sitrep_1, Monthly_cc_sitrep_2, Monthly_cc_sitrep_x, Period_x, filepaths_1, filepaths_2, March_15, Feb_15, Jan_15)
 
 # Not all trusts have names in the etr (possible due to mergers/closures)
 #setdiff(Monthly_cc_sitrep$Code, etr$Code)
@@ -149,28 +162,6 @@ last_thursdays <- data.frame(DATE = seq(min(Monthly_cc_sitrep$Date), as.Date('20
   mutate(Period = paste0(month, '-', year)) %>% 
   rename(last_thursday = DATE) %>% 
   select(Period, last_thursday)
-
-Daily_cc_sitrep_1920 <- read_csv(paste0(github_repo_dir, '/Daily_adult_cc_sitrep_201920.csv')) %>% 
-  gather(key = "Metric", value = "Beds", `CC Adult Open_43801`:`Occupancy rate_43891`) %>% 
-  mutate(Date = as.Date(as.numeric(substr(Metric, nchar(Metric) - 4 , nchar(Metric))), origin = "1899-12-30")) %>% 
-  mutate(Metric = substr(Metric, 1, nchar(Metric) - 6)) %>% 
-  spread(Metric, Beds) %>% 
-  mutate(adult_beds_occupied = as.numeric(`CC Adult Occ`)) %>% 
-  mutate(adult_beds_open = as.numeric(`CC Adult Open`)) %>% 
-  mutate(adult_beds_available = adult_beds_open - adult_beds_occupied) %>% 
-  mutate(Occupied_rate = adult_beds_occupied / adult_beds_open) %>% 
-  select(Code, Date, adult_beds_open, adult_beds_available, adult_beds_occupied, Occupied_rate) %>% 
-  left_join(etr, by = 'Code') %>% 
-  rename(`Region Code` = National_grouping) %>% 
-  left_join(Region, by = 'Region Code') %>% 
-  left_join(catchment_pop, by = 'Code') %>%
-  mutate(cc_beds_per_100000 = (adult_beds_open / Emergency_catchment_pop_2018) * 100000) %>% 
-  rename(Region_code = `Region Code`,
-         Region_name = `Region name`) %>% 
-  select(Code, Name, Region_code, Region_name, Date, adult_beds_open, adult_beds_occupied, adult_beds_available, Occupied_rate, Emergency_catchment_pop_2018, cc_beds_per_100000)
-
-monthly_return_from_daily <- Daily_cc_sitrep_1920 %>% 
-  filter(Date %in% last_thursdays$last_thursday)  
 
 # closed organisations have been removed from the dataset
 Monthly_cc_sitrep<- Monthly_cc_sitrep %>% 
@@ -189,12 +180,6 @@ Providers_dec <- Monthly_cc_sitrep %>%
   filter(Period == 'December-2019') %>% 
   select(Code, Name,  Region_code, Region_name) %>% 
   unique() 
-
-Providers_dec_daily <- Daily_cc_sitrep_1920 %>% 
-  filter(Date == '2019-12-26') %>% 
-  unique()
-
-# setdiff(Providers_dec$Name, Providers_dec_daily$Name)
 
 Providers <- Monthly_cc_sitrep %>% 
   select(Code, Name,  Region_code, Region_name) %>% 
@@ -337,7 +322,7 @@ sitrep_beds %>%
 
 sitrep_beds %>% 
   select(Name, Date, adult_beds_available) %>% 
-  # filter(Date >= '2019-01-01') %>% 
+  # filter(Date > '2019-01-01') %>%
   group_by(Name) %>% 
   summarise(available = mean(adult_beds_available))
 
@@ -365,7 +350,7 @@ ggplot(trust_sitrep, aes(x = Period, y = Beds, group = Status, fill = Status)) +
                     labels = c('Available', 'Occupied')) +
   scale_y_continuous(breaks = seq(0,120, 20)) +
   ph_theme() +
-  labs(title = 'Critical care beds (adults); Sussex and East Surrey STP Trusts; April 2015-January 2020;',
+  labs(title = 'Critical care beds (adults); Sussex and East Surrey STP Trusts; January 2015-January 2020;',
        x = 'Last Thursday of each month',
        y = 'Number of critical care beds occupied') +
   theme(axis.text.x = element_text(angle = 90))
@@ -391,7 +376,8 @@ p_beds_occupied_jab_trust <- ggplot(Jan_2020_ses_stp, aes(x = Name, y = Percenta
   geom_bar(stat = "identity", width = 0.8) +
   scale_fill_manual(values = c('#f9ac26', '#DBDBDB'),
                     name = 'Bed status',
-                    labels = c('Available', 'Occupied')) +
+                    labels = c('Available', 'Occupied'),
+                    expand = c(0,0.01)) +
   labs(x = NULL,
        y = 'Percentage') +
   scale_y_continuous(breaks = seq(0,1,.1),
@@ -402,45 +388,97 @@ p_beds_occupied_jab_trust <- ggplot(Jan_2020_ses_stp, aes(x = Name, y = Percenta
 
 grid.arrange(n_beds_occupied_jan_trust, p_beds_occupied_jab_trust, ncol=2, top = 'Critical care beds by bed status; Sussex and East Surrey STP; January 2020; Number of beds and percentage', widths = c(2.1,1.8))
 
+trust_sitrep <- Monthly_cc_sitrep %>%
+  filter(Name %in% c('Brighton and Sussex University Hospitals NHS Trust', 'East Sussex Healthcare NHS Trust', 'Queen Victoria Hospital NHS Foundation Trust', 'Surrey and Sussex Healthcare NHS Trust', 'Western Sussex Hospitals NHS Foundation Trust')) %>% 
+  arrange(Name, Date) %>% 
+  mutate(Period = factor(Period, levels = unique(Period))) %>% 
+  arrange(Period) 
 
-local_trust_cc <- Daily_cc_sitrep %>% 
-  filter(Name == 'ENGLAND')
+trust_sitrep_1 <- trust_sitrep %>% 
+  rename(Area = Name)
 
-ggplot(data = local_trust_cc, aes(x = Date, y = Occupied_rate, group = 1)) +
-  geom_line(colour = '#999999') +
-  geom_point(size = 2, 
+ggplot(trust_sitrep, aes(x = Period, y = Percentage_adult_cc_beds_occupied)) +
+  geom_line(data = trust_sitrep_1, aes(x = Period, y = Percentage_adult_cc_beds_occupied, group = Area), colour = '#c5c5c5') +
+  geom_line(aes(group = Name),
+            colour = '#000000') +
+  geom_point(aes(fill = occupancy_above_85),
+             size = 2,
+             colour = '#ffffff',
              shape = 21) +
-  labs(title = 'Daily Critical Care bed (Adults) occupancy as a proportion of open Critical Care beds',
-    subtitle = paste0(unique(local_trust$Name), ' (', unique(local_trust$Code), ')'),
-       x = 'Day',
-       y = 'Critical care bed occupancy proportion') +
-  scale_y_continuous(limit = c(.75, 1), 
-                     label = percent) +
-  scale_x_date(date_labels = "%b %d (%A)",
-               date_breaks = '1 week',
-               date_minor_breaks = '1 day') +
+  scale_fill_manual(values = c('#660066', '#FA6900'),
+                    name = 'Occupancy (%)') +
+  scale_y_continuous(limits = c(0,1.2),
+                     breaks = seq(0,1,.2),
+                     labels = percent_format(accuracy = 1),
+                     expand = c(0,0.01)) +
+  labs(title = 'Critical care beds (adults) occupied as a proportion of open critical care beds; January 2015-January 2020;',
+       x = 'Last Thursday of each month',
+       y = 'Proportion of critical care beds occupied') +
+  geom_hline(aes(yintercept = .85),
+             colour = "#3d2b65",
+             linetype="dashed",
+             lwd = .5) +
+  facet_rep_grid(Name ~., repeat.tick.labels = FALSE) +
   ph_theme() +
-  theme(axis.text.x = element_text(angle = 90))
+  theme(axis.text.x = element_text(angle = 90)) +
+  theme(strip.text = element_blank()) +
+  annotate(geom = "text", label = c('Brighton and Sussex University Hospitals NHS Trust', 'East Sussex Healthcare NHS Trust', 'Queen Victoria Hospital NHS Foundation Trust', 'Surrey and Sussex Healthcare NHS Trust', 'Western Sussex Hospitals NHS Foundation Trust'), x = 1, y = 1.1, size = 3, fontface = "bold", hjust = 0)
 
-local_trust_ga <- Daily_ga_sitrep %>% 
-  filter(Name == 'ENGLAND')
+# Occupancy over time, peaks and average occupancy
 
-ggplot(data = local_trust_ga, aes(x = Date, y = Occupied_rate, group = 1)) +
-  geom_line(colour = '#999999') +
-  geom_point(size = 2, 
-             shape = 21) +
-  labs(title = 'Daily general and acute bed occupancy as a proportion of all open beds',
-       subtitle = paste0(unique(local_trust$Name), ' (', unique(local_trust$Code), ')'),
-       x = 'Day',
-       y = 'G&A bed occupancy proportion') +
-  scale_y_continuous(limit = c(.75, 1), 
-                     label = percent) +
-  scale_x_date(date_labels = "%b %d (%A)",
-               date_breaks = '1 week',
-               date_minor_breaks = '1 day') +
-  ph_theme() +
-  theme(axis.text.x = element_text(angle = 90))
+trust_sitrep %>% 
+  select(Name, Period, Percentage_adult_cc_beds_occupied) %>% 
+  spread(Period, Percentage_adult_cc_beds_occupied) %>% 
+  select(Name, `January-2015`,`January-2019`, `January-2020`)
 
+trust_sitrep %>% 
+  select(Name, Period, adult_beds_occupied) %>% 
+  spread(Period, adult_beds_occupied) %>% 
+  select(Name, `January-2019`, `January-2020`)
+
+trust_sitrep %>% 
+  select(Name, Period, adult_beds_available) %>% 
+  spread(Period, adult_beds_available) %>% 
+  select(Name, `January-2019`, `January-2020`)
+
+trust_sitrep %>% 
+  select(Name, Period, adult_beds_open) %>% 
+  spread(Period, adult_beds_open) %>% 
+  select(Name, `January-2019`, `January-2020`)
+
+trust_sitrep %>% 
+  select(Name, Date, occupancy_above_85, Percentage_adult_cc_beds_occupied) %>% 
+  filter(Date > '2019-01-01') %>%
+  filter(occupancy_above_85 == '>= 85%') %>% 
+  arrange(Name) 
+  
+trust_sitrep %>% 
+  select(Name, Date, Percentage_adult_cc_beds_occupied) %>% 
+  filter(Date > '2019-01-01') %>%
+  group_by(Name) %>% 
+  summarise(Percentage_adult_cc_beds_occupied = mean(Percentage_adult_cc_beds_occupied))
+
+trust_sitrep %>% 
+  select(Name, Period, Percentage_adult_cc_beds_occupied) %>% 
+  group_by(Name) %>% 
+  filter(Percentage_adult_cc_beds_occupied == max(Percentage_adult_cc_beds_occupied))
+
+trust_sitrep %>% 
+  select(Name, adult_beds_open) %>% 
+  group_by(Name, adult_beds_open) %>% 
+  summarise(n()) %>% 
+  View()
+
+trust_sitrep %>% 
+  select(Name, Period, adult_beds_available) %>% 
+  group_by(Name) %>% 
+  filter(adult_beds_available == max(adult_beds_available))
+
+trust_sitrep %>% 
+  select(Name, Date, adult_beds_available) %>% 
+  # filter(Date > '2019-01-01') %>%
+  group_by(Name) %>% 
+  summarise(available = mean(adult_beds_available))
 
 # MSitRep data are published to a monthly timetable with data being published around 6 to 7 weeks after the end of the reference period
 
@@ -536,19 +574,149 @@ ggplot(data = local_trust_ga, aes(x = Date, y = Occupied_rate, group = 1)) +
 #         legend.title = element_text(face = 'bold', size = 8))
 
 
-Daily_ga_sitrep <- read_csv(paste0(github_repo_dir, '/general_acute_bed_occupancy_daily_sitrep.csv')) %>% 
-  gather(key = 'Metric', value = 'Beds', `Core Beds Open_43801`:`Occupancy rate_43891`) %>% 
+trust_sitrep_per_capita <- trust_sitrep %>% 
+  filter(Date == max(Date)) %>% 
+  mutate(Name = ifelse(Name == 'Brighton and Sussex University Hospitals NHS Trust', 'Brighton and Sussex\nUniversity Hospitals\nNHS Trust', ifelse(Name == 'Western Sussex Hospitals NHS Foundation Trust', 'Western Sussex\nHospitals NHS\nFoundation Trust', ifelse(Name == 'East Sussex Healthcare NHS Trust', 'East Sussex\nHealthcare\nNHS Trust', ifelse(Name == 'Surrey and Sussex Healthcare NHS Trust','Surrey and Sussex\nHealthcare\nNHS Trust', ifelse(Name == 'Queen Victoria Hospital NHS Foundation Trust', 'Queen Victoria\nHospital NHS\nFoundation Trust', Name)))))) %>% 
+  mutate(Name = factor(Name, levels = c("Queen Victoria\nHospital NHS\nFoundation Trust","Surrey and Sussex\nHealthcare\nNHS Trust", "East Sussex\nHealthcare\nNHS Trust","Western Sussex\nHospitals NHS\nFoundation Trust","Brighton and Sussex\nUniversity Hospitals\nNHS Trust"))) %>% 
+  mutate(cc_beds_available_per_100000 = (adult_beds_available / Emergency_catchment_pop_2018) *100000) %>% 
+  mutate(cc_beds_occupied_per_100000 = (adult_beds_occupied / Emergency_catchment_pop_2018) *100000) %>% 
+  select(Name, cc_beds_per_100000, cc_beds_available_per_100000, cc_beds_occupied_per_100000) %>% 
+  gather(key = "Status", value = "Beds", c(cc_beds_occupied_per_100000, cc_beds_available_per_100000))
+
+n_beds_occupied_jan_trust <- ggplot(Jan_2020_ses_stp, aes(x = Name, y = Beds, group = Status, fill = Status)) +
+  geom_bar(stat = "identity", width = 0.8) +
+  scale_fill_manual(values = c('#f9ac26', '#DBDBDB'),
+                    name = 'Bed status',
+                    labels = c('Available', 'Occupied')) +
+  coord_flip() +
+  labs(x = NULL,
+       y = 'Beds') +
+  ph_theme() 
+
+n_beds_occupied_jan_trust_per_capita <- ggplot(trust_sitrep_per_capita, aes(x = Name, y = Beds, group = Status, fill = Status)) +
+  geom_bar(stat = "identity", width = 0.8) +
+  scale_fill_manual(values = c('#f9ac26', '#DBDBDB'),
+                    name = 'Bed status',
+                    labels = c('Available', 'Occupied')) +
+  scale_y_continuous(limits = c(0,10),
+                     breaks = seq(0,10, 1),
+                     expand = c(0,0.01)) +
+  coord_flip() +
+  labs(x = NULL,
+       y = 'Beds per 100,000 population') +
+  ph_theme() +
+  theme(axis.text.y = element_blank())
+
+grid.arrange(n_beds_occupied_jan_trust, n_beds_occupied_jan_trust_per_capita, ncol=2, top = 'Critical care beds by bed status; Sussex and East Surrey STP; January 2020; Actual beds and beds per 100,000', widths = c(2.2,1.8))
+
+
+beds_open_per_1000000 <- ggplot(trust_sitrep_per_capita, aes(x = Name, y = cc_beds_per_100000)) +
+  geom_bar(stat = "identity", 
+           width = 0.8,
+           fill = '#0093c0') +
+  scale_y_continuous(limits = c(0,10),
+                     breaks = seq(0,10, 1),
+                     expand = c(0,0.01)) +
+  coord_flip() +
+  labs(x = NULL,
+       y = 'Beds per 100,000 population') +
+  ph_theme() 
+
+
+ggplot(trust_sitrep_per_capita, aes(x = Name, y = cc_beds_available_per_100000)) +
+  geom_bar(stat = "identity", 
+           width = 0.8,
+           fill = '#f9ac26') +
+  scale_y_continuous(limits = c(0,10),
+                     breaks = seq(0,10, 1),
+                     expand = c(0,0.01)) +
+  coord_flip() +
+  labs(x = NULL,
+       y = 'Beds available per 100,000 population') +
+  ph_theme() 
+
+# 
+# Daily_ga_sitrep <- read_csv(paste0(github_repo_dir, '/general_acute_bed_occupancy_daily_sitrep.csv')) %>% 
+#   gather(key = 'Metric', value = 'Beds', `Core Beds Open_43801`:`Occupancy rate_43891`) %>% 
+#   mutate(Date = as.Date(as.numeric(substr(Metric, nchar(Metric) - 4 , nchar(Metric))), origin = "1899-12-30")) %>% 
+#   mutate(Metric = substr(Metric, 1, nchar(Metric) - 6)) %>% 
+#   spread(Metric, Beds) %>% 
+#   mutate(Occupied = as.numeric(`Total beds occ'd`)) %>% 
+#   mutate(Open = as.numeric(`Total Beds Open`)) %>% 
+#   mutate(Available = Open - Occupied) %>% 
+#   mutate(Occupied_rate = Occupied / Open) %>% 
+#   select(Code, Name, Date, Open, Available, Occupied, Occupied_rate)
+# 
+# Daily_cc_sitrep %>% 
+#   write.csv(., paste0(github_repo_dir, '/Daily_adult_cc_sitrep.csv'), row.names = FALSE)
+# 
+# Daily_ga_sitrep %>% 
+#   write.csv(., paste0(github_repo_dir, '/Daily_adult_ga_sitrep.csv'), row.names = FALSE)
+
+Daily_cc_sitrep_1920 <- read_csv(paste0(github_repo_dir, '/Daily_adult_cc_sitrep_201920.csv')) %>% 
+  gather(key = "Metric", value = "Beds", `CC Adult Open_43801`:`Occupancy rate_43891`) %>% 
   mutate(Date = as.Date(as.numeric(substr(Metric, nchar(Metric) - 4 , nchar(Metric))), origin = "1899-12-30")) %>% 
   mutate(Metric = substr(Metric, 1, nchar(Metric) - 6)) %>% 
   spread(Metric, Beds) %>% 
-  mutate(Occupied = as.numeric(`Total beds occ'd`)) %>% 
-  mutate(Open = as.numeric(`Total Beds Open`)) %>% 
-  mutate(Available = Open - Occupied) %>% 
-  mutate(Occupied_rate = Occupied / Open) %>% 
-  select(Code, Name, Date, Open, Available, Occupied, Occupied_rate)
+  mutate(adult_beds_occupied = as.numeric(`CC Adult Occ`)) %>% 
+  mutate(adult_beds_open = as.numeric(`CC Adult Open`)) %>% 
+  mutate(adult_beds_available = adult_beds_open - adult_beds_occupied) %>% 
+  mutate(Occupied_rate = adult_beds_occupied / adult_beds_open) %>% 
+  select(Code, Date, adult_beds_open, adult_beds_available, adult_beds_occupied, Occupied_rate) %>% 
+  left_join(etr, by = 'Code') %>% 
+  rename(`Region Code` = National_grouping) %>% 
+  left_join(Region, by = 'Region Code') %>% 
+  left_join(catchment_pop, by = 'Code') %>%
+  mutate(cc_beds_per_100000 = (adult_beds_open / Emergency_catchment_pop_2018) * 100000) %>% 
+  rename(Region_code = `Region Code`,
+         Region_name = `Region name`) %>% 
+  select(Code, Name, Region_code, Region_name, Date, adult_beds_open, adult_beds_occupied, adult_beds_available, Occupied_rate, Emergency_catchment_pop_2018, cc_beds_per_100000)
 
-Daily_cc_sitrep %>% 
-  write.csv(., paste0(github_repo_dir, '/Daily_adult_cc_sitrep.csv'), row.names = FALSE)
+# monthly_return_from_daily <- Daily_cc_sitrep_1920 %>% 
+#   filter(Date %in% last_thursdays$last_thursday)  
+# 
+# Providers_dec_daily <- Daily_cc_sitrep_1920 %>% 
+#   filter(Date == '2019-12-26') %>% 
+#   unique()
 
-Daily_ga_sitrep %>% 
-  write.csv(., paste0(github_repo_dir, '/Daily_adult_ga_sitrep.csv'), row.names = FALSE)
+# setdiff(Providers_dec$Name, Providers_dec_daily$Name)
+
+local_trust_cc <- Daily_cc_sitrep %>% 
+  filter(Name == 'ENGLAND')
+
+ggplot(data = local_trust_cc, aes(x = Date, y = Occupied_rate, group = 1)) +
+  geom_line(colour = '#999999') +
+  geom_point(size = 2, 
+             shape = 21) +
+  labs(title = 'Daily Critical Care bed (Adults) occupancy as a proportion of open Critical Care beds',
+       subtitle = paste0(unique(local_trust$Name), ' (', unique(local_trust$Code), ')'),
+       x = 'Day',
+       y = 'Critical care bed occupancy proportion') +
+  scale_y_continuous(limit = c(.75, 1), 
+                     label = percent) +
+  scale_x_date(date_labels = "%b %d (%A)",
+               date_breaks = '1 week',
+               date_minor_breaks = '1 day') +
+  ph_theme() +
+  theme(axis.text.x = element_text(angle = 90))
+
+local_trust_ga <- Daily_ga_sitrep %>% 
+  filter(Name == 'ENGLAND')
+
+ggplot(data = local_trust_ga, aes(x = Date, y = Occupied_rate, group = 1)) +
+  geom_line(colour = '#999999') +
+  geom_point(size = 2, 
+             shape = 21) +
+  labs(title = 'Daily general and acute bed occupancy as a proportion of all open beds',
+       subtitle = paste0(unique(local_trust$Name), ' (', unique(local_trust$Code), ')'),
+       x = 'Day',
+       y = 'G&A bed occupancy proportion') +
+  scale_y_continuous(limit = c(.75, 1), 
+                     label = percent) +
+  scale_x_date(date_labels = "%b %d (%A)",
+               date_breaks = '1 week',
+               date_minor_breaks = '1 day') +
+  ph_theme() +
+  theme(axis.text.x = element_text(angle = 90))
+
+
