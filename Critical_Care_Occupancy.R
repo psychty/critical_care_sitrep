@@ -635,7 +635,8 @@ ggplot(trust_sitrep_per_capita, aes(x = Name, y = cc_beds_available_per_100000))
        y = 'Beds available per 100,000 population') +
   ph_theme() 
 
-# 
+
+
 # Daily_ga_sitrep <- read_csv(paste0(github_repo_dir, '/general_acute_bed_occupancy_daily_sitrep.csv')) %>% 
 #   gather(key = 'Metric', value = 'Beds', `Core Beds Open_43801`:`Occupancy rate_43891`) %>% 
 #   mutate(Date = as.Date(as.numeric(substr(Metric, nchar(Metric) - 4 , nchar(Metric))), origin = "1899-12-30")) %>% 
@@ -672,6 +673,8 @@ Daily_cc_sitrep_1920 <- read_csv(paste0(github_repo_dir, '/Daily_adult_cc_sitrep
          Region_name = `Region name`) %>% 
   select(Code, Name, Region_code, Region_name, Date, adult_beds_open, adult_beds_occupied, adult_beds_available, Occupied_rate, Emergency_catchment_pop_2018, cc_beds_per_100000)
 
+
+
 # monthly_return_from_daily <- Daily_cc_sitrep_1920 %>% 
 #   filter(Date %in% last_thursdays$last_thursday)  
 # 
@@ -681,15 +684,57 @@ Daily_cc_sitrep_1920 <- read_csv(paste0(github_repo_dir, '/Daily_adult_cc_sitrep
 
 # setdiff(Providers_dec$Name, Providers_dec_daily$Name)
 
-local_trust_cc <- Daily_cc_sitrep %>% 
-  filter(Name == 'ENGLAND')
+local_trust_cc <- Daily_cc_sitrep_1920 %>% 
+  filter(Name %in% c('Brighton and Sussex University Hospitals NHS Trust', 'East Sussex Healthcare NHS Trust', 'Queen Victoria Hospital NHS Foundation Trust', 'Surrey and Sussex Healthcare NHS Trust', 'Western Sussex Hospitals NHS Foundation Trust')) %>% 
+  as.data.frame() %>% 
+  mutate(occupancy_above_85 = ifelse(Occupied_rate >= .85, '>= 85%', 'below 85%'))
+
+local_trust_cc_1 <- local_trust_cc %>% 
+  rename(Area = Name)
+
+local_trust_cc %>% 
+  group_by(Name, occupancy_above_85) %>% 
+  summarise(days = n()) %>%
+  group_by(Name) %>% 
+  mutate(Percentage = days / sum(days))
+
+ggplot(local_trust_cc, aes(x = Date, y = Occupied_rate)) +
+  geom_line(data = local_trust_cc_1, aes(x = Date, y = Occupied_rate, group = Area), colour = '#c5c5c5') +
+  geom_line(aes(group = Name),
+            colour = '#000000') +
+  geom_point(aes(fill = occupancy_above_85),
+             size = 2,
+             colour = '#ffffff',
+             shape = 21) +
+  scale_fill_manual(values = c('#660066', '#FA6900'),
+                    name = 'Occupancy (%)') +
+  scale_y_continuous(limits = c(0,1.2),
+                     breaks = seq(0,1,.2),
+                     labels = percent_format(accuracy = 1),
+                     expand = c(0,0.01)) +
+  scale_x_date(date_labels = "%b %d (%A)",
+               date_breaks = '2 day',
+               date_minor_breaks = '1 day',
+               expand = c(0,.5)) +
+  labs(title = 'Critical care beds (adults) occupied as a proportion of open critical care beds; 02 December 2019- 01 March 2020;',
+       x = 'Day',
+       y = 'Proportion of critical care beds occupied') +
+  geom_hline(aes(yintercept = .85),
+             colour = "#3d2b65",
+             linetype="dashed",
+             lwd = .5) +
+  facet_rep_grid(Name ~., repeat.tick.labels = FALSE) +
+  ph_theme() +
+  theme(axis.text.x = element_text(angle = 90)) +
+  theme(strip.text = element_blank()) +
+  annotate(geom = "text", label = c('Brighton and Sussex University Hospitals NHS Trust', 'East Sussex Healthcare NHS Trust', 'Surrey and Sussex Healthcare NHS Trust', 'Western Sussex Hospitals NHS Foundation Trust'), x = as.Date('2019-12-02'), y = 1.1, size = 3, fontface = "bold", hjust = 0)
+
 
 ggplot(data = local_trust_cc, aes(x = Date, y = Occupied_rate, group = 1)) +
   geom_line(colour = '#999999') +
   geom_point(size = 2, 
              shape = 21) +
   labs(title = 'Daily Critical Care bed (Adults) occupancy as a proportion of open Critical Care beds',
-       subtitle = paste0(unique(local_trust$Name), ' (', unique(local_trust$Code), ')'),
        x = 'Day',
        y = 'Critical care bed occupancy proportion') +
   scale_y_continuous(limit = c(.75, 1), 
@@ -699,24 +744,105 @@ ggplot(data = local_trust_cc, aes(x = Date, y = Occupied_rate, group = 1)) +
                date_minor_breaks = '1 day') +
   ph_theme() +
   theme(axis.text.x = element_text(angle = 90))
+# 
+# local_trust_ga <- Daily_ga_sitrep %>% 
+#   filter(Name == 'ENGLAND')
+# 
+# ggplot(data = local_trust_ga, aes(x = Date, y = Occupied_rate, group = 1)) +
+#   geom_line(colour = '#999999') +
+#   geom_point(size = 2, 
+#              shape = 21) +
+#   labs(title = 'Daily general and acute bed occupancy as a proportion of all open beds',
+#        subtitle = paste0(unique(local_trust$Name), ' (', unique(local_trust$Code), ')'),
+#        x = 'Day',
+#        y = 'G&A bed occupancy proportion') +
+#   scale_y_continuous(limit = c(.75, 1), 
+#                      label = percent) +
+#   scale_x_date(date_labels = "%b %d (%A)",
+#                date_breaks = '1 week',
+#                date_minor_breaks = '1 day') +
+#   ph_theme() +
+#   theme(axis.text.x = element_text(angle = 90))
 
-local_trust_ga <- Daily_ga_sitrep %>% 
-  filter(Name == 'ENGLAND')
-
-ggplot(data = local_trust_ga, aes(x = Date, y = Occupied_rate, group = 1)) +
-  geom_line(colour = '#999999') +
-  geom_point(size = 2, 
-             shape = 21) +
-  labs(title = 'Daily general and acute bed occupancy as a proportion of all open beds',
-       subtitle = paste0(unique(local_trust$Name), ' (', unique(local_trust$Code), ')'),
-       x = 'Day',
-       y = 'G&A bed occupancy proportion') +
-  scale_y_continuous(limit = c(.75, 1), 
-                     label = percent) +
-  scale_x_date(date_labels = "%b %d (%A)",
-               date_breaks = '1 week',
-               date_minor_breaks = '1 day') +
-  ph_theme() +
-  theme(axis.text.x = element_text(angle = 90))
 
 
+average_available <- trust_sitrep %>% 
+  select(Name, Date, adult_beds_available) %>% 
+  filter(Date > '2019-01-01') %>%
+  group_by(Name) %>% 
+  summarise(`Average available beds (12 months)`= round(mean(adult_beds_available),0))
+
+average_occupancy <- trust_sitrep %>% 
+  select(Name, Date, Percentage_adult_cc_beds_occupied) %>% 
+  filter(Date > '2019-01-01') %>%
+  group_by(Name) %>% 
+  summarise(`Average % occupied beds (12 months)`= paste0(round(mean(Percentage_adult_cc_beds_occupied) * 100, 1), '%')) 
+
+average_occupancy_lt <- trust_sitrep %>% 
+  select(Name, Date, Percentage_adult_cc_beds_occupied) %>% 
+  group_by(Name) %>% 
+  summarise(`Average % occupied beds (five years)`= paste0(round(mean(Percentage_adult_cc_beds_occupied) * 100, 1), '%')) 
+
+tab_trust <- trust_sitrep %>% 
+  filter(Date == '2020-01-01') %>% 
+  left_join(average_available, by = 'Name') %>% 
+  left_join(average_occupancy, by = 'Name') %>% 
+  left_join(average_occupancy_lt, by = 'Name') %>% 
+  select(Name, Percentage_adult_cc_beds_occupied, adult_beds_available, adult_beds_open, cc_beds_per_100000,  `Average available beds (12 months)`, `Average % occupied beds (12 months)`, `Average % occupied beds (five years)`) %>% 
+  mutate(cc_beds_per_100000 = round(cc_beds_per_100000, 0)) %>% 
+  mutate(Percentage_adult_cc_beds_occupied = paste0(round(Percentage_adult_cc_beds_occupied *100,1), '%')) %>% 
+  rename(Area = Name,
+         `% adult critical care beds occupied (Jan 2020)` = Percentage_adult_cc_beds_occupied,
+         `Number of critical care beds open (Jan 2020)` = adult_beds_open,
+         `Number of critical care beds open per 100,000 population (Jan 2020)` = cc_beds_per_100000,
+         `Number of critical care beds available for new patients (Jan 2020)` = adult_beds_available)
+
+
+average_available_agg <- sitrep_beds %>% 
+  select(Name, Date, adult_beds_available) %>% 
+  filter(Date > '2019-01-01') %>%
+  group_by(Name) %>% 
+  summarise(`Average available beds (12 months)`= round(mean(adult_beds_available),0))
+
+average_occupancy_agg <- sitrep_beds %>% 
+  select(Name, Date, Percentage_adult_cc_beds_occupied) %>% 
+  filter(Date > '2019-01-01') %>%
+  group_by(Name) %>% 
+  summarise(`Average % occupied beds (12 months)`= paste0(round(mean(Percentage_adult_cc_beds_occupied) * 100, 1), '%')) 
+
+average_occupancy_lt_agg <- sitrep_beds %>% 
+  select(Name, Date, Percentage_adult_cc_beds_occupied) %>% 
+  group_by(Name) %>% 
+  summarise(`Average % occupied beds (five years)`= paste0(round(mean(Percentage_adult_cc_beds_occupied) * 100, 1), '%')) 
+
+winter_ave_occ <- local_trust_cc %>% 
+  group_by(Name) %>% 
+  summarise(`Average % occupied beds (Winter 2019)`= paste0(round(mean(Occupied_rate) * 100, 1), '%'))
+
+winter_days <- local_trust_cc %>% 
+  group_by(Name, occupancy_above_85) %>% 
+  filter(occupancy_above_85 == '>= 85%') %>% 
+  summarise(`Number of days above 85% occupancy (out of 91) in Winter 2019` = n()) %>% 
+  select(-occupancy_above_85)
+
+tab_agg <- sitrep_beds %>% 
+  filter(Date == '2020-01-01') %>% 
+  left_join(average_available_agg, by = 'Name') %>% 
+  left_join(average_occupancy_agg, by = 'Name') %>% 
+  left_join(average_occupancy_lt_agg, by = 'Name') %>% 
+  select(Name, Percentage_adult_cc_beds_occupied, adult_beds_available, adult_beds_open, `Average available beds (12 months)`, `Average % occupied beds (12 months)`, `Average % occupied beds (five years)`) %>% 
+  mutate(cc_beds_per_100000 = NA) %>% 
+  mutate(Percentage_adult_cc_beds_occupied = paste0(round(Percentage_adult_cc_beds_occupied *100,1), '%')) %>% 
+  rename(Area = Name,
+         `% adult critical care beds occupied (Jan 2020)` = Percentage_adult_cc_beds_occupied,
+         `Number of critical care beds open (Jan 2020)` = adult_beds_open,
+         `Number of critical care beds open per 100,000 population (Jan 2020)` = cc_beds_per_100000,
+         `Number of critical care beds available for new patients (Jan 2020)` = adult_beds_available)
+ 
+
+
+tab_trust %>% 
+  bind_rows(tab_agg) %>% 
+  left_join(winter_ave_occ, by = c('Area' = 'Name')) %>% 
+  left_join(winter_days, by = c('Area' = 'Name')) %>% 
+  write.csv(., '/table_for_report_critical_care.csv',  row.names = FALSE)

@@ -1,0 +1,9 @@
+"Area","% adult critical care beds occupied (Jan 2020)","Number of critical care beds available for new patients (Jan 2020)","Number of critical care beds open (Jan 2020)","Number of critical care beds open per 100,000 population (Jan 2020)","Average available beds (12 months)","Average % occupied beds (12 months)","Average % occupied beds (five years)","Average % occupied beds (Winter 2019)","Number of days above 85% occupancy (out of 91) in Winter 2019"
+"Brighton and Sussex University Hospitals NHS Trust","86.3%",7,51,10,8,"84%","84.5%","89.7%",80
+"East Sussex Healthcare NHS Trust","78.9%",4,19,5,5,"74.1%","70.8%","77.7%",23
+"Queen Victoria Hospital NHS Foundation Trust","60%",2,5,4,2,"50%","55%",NA,NA
+"Surrey and Sussex Healthcare NHS Trust","87.5%",2,16,4,2,"90.6%","94.5%","92.7%",82
+"Western Sussex Hospitals NHS Foundation Trust","77.3%",5,22,5,5,"76.9%","79.1%","78.5%",32
+"England","83%",700,4123,NA,805,"80.4%","82.1%",NA,NA
+"South East Commissioning Region","81%",99,522,NA,102,"80.3%","84.1%",NA,NA
+"Sussex and East Surrey STP acute trusts","82.3%",20,113,NA,22,"80.4%","81.4%",NA,NA
